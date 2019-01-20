@@ -1,2 +1,3 @@
 *.ai
 .pytest_cache
+src/learn.pyc
