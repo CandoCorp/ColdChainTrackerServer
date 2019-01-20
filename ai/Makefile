@@ -3,6 +3,8 @@
 serve: clean
 	export FLASK_APP=server.py && \
 	export FLASK_DEBUG=1 && \
+	export LC_ALL=C.UTF-8 && \
+    export LANG=C.UTF-8 && \
 	cd src && \
 	flask run --debugger --port 8002
 

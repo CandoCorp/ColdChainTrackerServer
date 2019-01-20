@@ -27,7 +27,7 @@ release:
 
 server1:
 	go build -v 
-	./main -debug
+	./main -port 8005 -debug
 
 docs:
 	cd doc && make serve
