@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/scando/ColdChainTrackerServer/main/src/models"
+	"github.com/scando1993/ColdChainTrackerServer/main/src/models"
 
-	"github.com/scando/ColdChainTrackerServer/main/src/database"
+	"github.com/scando1993/ColdChainTrackerServer/main/src/database"
 )
 
 func Dump(family string) (err error) {

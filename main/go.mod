@@ -1,4 +1,4 @@
-module github.com/scando/ColdChainTrackerServer/main
+module github.com/scando1993/ColdChainTrackerServer/main
 
 require (
 	github.com/NYTimes/gziphandler v1.0.1

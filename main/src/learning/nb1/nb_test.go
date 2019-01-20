@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/scando/ColdChainTrackerServer/main/src/database"
+	"github.com/scando1993/ColdChainTrackerServer/main/src/database"
 	"github.com/stretchr/testify/assert"
 )
 

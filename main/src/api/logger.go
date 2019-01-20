@@ -1,6 +1,6 @@
 package api
 
-import "github.com/scando/ColdChainTrackerServer/main/src/logging"
+import "github.com/scando1993/ColdChainTrackerServer/main/src/logging"
 
 var logger *logging.SeelogWrapper
 

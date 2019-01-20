@@ -12,10 +12,10 @@ import (
 
 	"fmt"
 
-	"github.com/scando/ColdChainTrackerServer/main/src/api"
-	"github.com/scando/ColdChainTrackerServer/main/src/database"
-	"github.com/scando/ColdChainTrackerServer/main/src/mqtt"
-	"github.com/scando/ColdChainTrackerServer/main/src/server"
+	"github.com/scando1993/ColdChainTrackerServer/main/src/api"
+	"github.com/scando1993/ColdChainTrackerServer/main/src/database"
+	"github.com/scando1993/ColdChainTrackerServer/main/src/mqtt"
+	"github.com/scando1993/ColdChainTrackerServer/main/src/server"
 )
 
 func main() {

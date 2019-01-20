@@ -5,7 +5,7 @@ import (
 	"sync"
 
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/scando/ColdChainTrackerServer/main/src/logging"
+	"github.com/scando1993/ColdChainTrackerServer/main/src/logging"
 )
 
 // DataFolder is set to where you want each Sqlite3 database to be stored

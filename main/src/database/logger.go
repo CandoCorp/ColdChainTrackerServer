@@ -1,6 +1,6 @@
 package database
 
-import "github.com/scando/ColdChainTrackerServer/main/src/logging"
+import "github.com/scando1993/ColdChainTrackerServer/main/src/logging"
 
 var DebugMode bool
 var logger *logging.SeelogWrapper

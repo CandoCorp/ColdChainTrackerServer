@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/scando/ColdChainTrackerServer/main/src/models"
+	"github.com/scando1993/ColdChainTrackerServer/main/src/models"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -13,11 +13,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/scando/ColdChainTrackerServer/main/src/database"
-	"github.com/scando/ColdChainTrackerServer/main/src/learning/nb1"
-	"github.com/scando/ColdChainTrackerServer/main/src/learning/nb2"
-	"github.com/scando/ColdChainTrackerServer/main/src/models"
-	"github.com/scando/ColdChainTrackerServer/main/src/utils"
+	"github.com/scando1993/ColdChainTrackerServer/main/src/database"
+	"github.com/scando1993/ColdChainTrackerServer/main/src/learning/nb1"
+	"github.com/scando1993/ColdChainTrackerServer/main/src/learning/nb2"
+	"github.com/scando1993/ColdChainTrackerServer/main/src/models"
+	"github.com/scando1993/ColdChainTrackerServer/main/src/utils"
 )
 
 // Calibrate will send the sensor data for a specific family to the machine learning algorithms

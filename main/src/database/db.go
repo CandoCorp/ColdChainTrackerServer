@@ -16,7 +16,7 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 	"github.com/mr-tron/base58/base58"
 	"github.com/pkg/errors"
-	"github.com/scando/ColdChainTrackerServer/main/src/models"
+	"github.com/scando1993/ColdChainTrackerServer/main/src/models"
 	"github.com/schollz/sqlite3dump"
 	. "github.com/schollz/stringsizer"
 )
