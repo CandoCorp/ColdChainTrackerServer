@@ -99,7 +99,7 @@ func AnalyzeSensorData(s models.SensorData) (aidata models.LocationAnalysis, err
 			return
 		}
 		if !target.Success {
-			err = errors.New("unable to analyze: " + target.Message)
+			err = errors.New("unable to analyze :( " + target.Message)
 			aChan <- a{err: err}
 			return
 		}
