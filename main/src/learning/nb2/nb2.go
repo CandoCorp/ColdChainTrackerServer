@@ -5,8 +5,8 @@ import (
 	"math"
 	"sort"
 
-	"github.com/schollz/find3/server/main/src/database"
-	"github.com/schollz/find3/server/main/src/models"
+	"github.com/scando/ColdChainTrackerServer/main/src/database"
+	"github.com/scando/ColdChainTrackerServer/main/src/models"
 )
 
 // Algorithm defines the basic structure

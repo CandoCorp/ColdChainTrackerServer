@@ -13,11 +13,11 @@ import (
 
 	MQTT "github.com/eclipse/paho.mqtt.golang"
 	"github.com/pkg/errors"
-	"github.com/schollz/find3/server/main/src/api"
-	"github.com/schollz/find3/server/main/src/database"
-	"github.com/schollz/find3/server/main/src/logging"
-	"github.com/schollz/find3/server/main/src/models"
-	"github.com/schollz/find3/server/main/src/utils"
+	"github.com/scando/ColdChainTrackerServer/main/src/api"
+	"github.com/scando/ColdChainTrackerServer/main/src/database"
+	"github.com/scando/ColdChainTrackerServer/main/src/logging"
+	"github.com/scando/ColdChainTrackerServer/main/src/models"
+	"github.com/scando/ColdChainTrackerServer/main/src/utils"
 )
 
 var (

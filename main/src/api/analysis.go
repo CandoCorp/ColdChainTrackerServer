@@ -9,10 +9,10 @@ import (
 
 	"github.com/pkg/errors"
 	cache "github.com/robfig/go-cache"
-	"github.com/schollz/find3/server/main/src/database"
-	"github.com/schollz/find3/server/main/src/learning/nb1"
-	"github.com/schollz/find3/server/main/src/models"
-	"github.com/schollz/find3/server/main/src/utils"
+	"github.com/scando/ColdChainTrackerServer/main/src/database"
+	"github.com/scando/ColdChainTrackerServer/main/src/learning/nb1"
+	"github.com/scando/ColdChainTrackerServer/main/src/models"
+	"github.com/scando/ColdChainTrackerServer/main/src/utils"
 )
 
 // AIPort designates the port for the AI processing

@@ -24,10 +24,10 @@ require (
 	github.com/tdewolff/minify v2.3.5+incompatible // indirect
 	github.com/tdewolff/parse v2.3.3+incompatible // indirect
 	github.com/ugorji/go v1.1.1 // indirect
-	github.com/golang/crypto v0.0.0-20180910181607-0e37d006457b
-	github.com/golang/net v0.0.0-20180911220305-26e67e76b6c3
+	golang.org/x/crypto v0.0.0-20180910181607-0e37d006457b
+	golang.org/x/net v0.0.0-20180911220305-26e67e76b6c3 // indirect
+	golang.org/x/text v0.3.0
 	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
 	gopkg.in/go-playground/validator.v8 v8.18.2 // indirect
 	gopkg.in/yaml.v2 v2.2.1
-	golang.org/x/text v0.3.0
 )

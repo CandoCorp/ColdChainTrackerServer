@@ -12,10 +12,10 @@ import (
 
 	"fmt"
 
-	"github.com/schollz/find3/server/main/src/api"
-	"github.com/schollz/find3/server/main/src/database"
-	"github.com/schollz/find3/server/main/src/mqtt"
-	"github.com/schollz/find3/server/main/src/server"
+	"github.com/scando/ColdChainTrackerServer/main/src/api"
+	"github.com/scando/ColdChainTrackerServer/main/src/database"
+	"github.com/scando/ColdChainTrackerServer/main/src/mqtt"
+	"github.com/scando/ColdChainTrackerServer/main/src/server"
 )
 
 func main() {

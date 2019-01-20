@@ -2,8 +2,8 @@ package api
 
 import (
 	"github.com/pkg/errors"
-	"github.com/schollz/find3/server/main/src/database"
-	"github.com/schollz/find3/server/main/src/models"
+	"github.com/scando/ColdChainTrackerServer/main/src/database"
+	"github.com/scando/ColdChainTrackerServer/main/src/models"
 )
 
 // GetGPSData returns the latest GPS data

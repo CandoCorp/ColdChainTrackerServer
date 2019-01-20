@@ -180,4 +180,4 @@ def testit():
                 headers_submit.append(headers[j])
                 csv_data_submit.append(int(round(float(signal.strip()))))
             print(loc)
-            a.predict_proba(headers_submit,csv_datat5rrrrrrrr1_submit)
+            a.predict_proba(headers_submit,csv_data_submit)
