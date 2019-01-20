@@ -6,8 +6,7 @@
 main 
 data/*
 mosquitto_config/*
-static/*
-
+static/scss
 # Test binary, build with `go test -c`
 *.test
 
