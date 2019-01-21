@@ -39,7 +39,7 @@ func Run() (err error) {
 		logger.Log.Debug("setup mqtt")
 	}
 
-	logger.Log.Debug("current families: ", database.GetFamilies())
+	logger.Log.Debug("current family: ", database.GetFamilies())
 
 	// setup gin server
 	gin.SetMode(gin.ReleaseMode)
@@ -65,7 +65,8 @@ func Run() (err error) {
 			c.Redirect(http.StatusMovedPermanently, "/view/dashboard/"+family)
 		} else {
 			c.HTML(http.StatusOK, "login.tmpl", gin.H{
-				"Message": template.HTML(fmt.Sprintf(`Family '%s' does not exist. Follow <a href="https://www.internalpositioning.com/doc/tracking_your_phone.md" target="_blank">these instructions</a> to get started.`, family)),
+				// "Message": template.HTML(fmt.Sprintf(`Family '%s' does not exist. Follow <a href="https://www.internalpositioning.com/doc/tracking_your_phone.md" target="_blank">these instructions</a> to get started.`, family)),
+				"Message": template.HTML(fmt.Sprintf(`Group '%s' does not exist.`, family)),
 			})
 		}
 
