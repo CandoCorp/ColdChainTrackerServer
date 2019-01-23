@@ -96,6 +96,7 @@ func SendMessageOverWebsockets(family string, device string, msg []byte) (err er
 			if err != nil {
 				logger.Log.Warnf("problem sending websocket: %s/%s", family+"-"+device)
 			}
+			logger.Log.Debugf("err content %s", err)
 		}
 	}
 	return

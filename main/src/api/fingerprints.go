@@ -26,6 +26,7 @@ func init() {
 func SaveSensorData(p models.SensorData) (err error) {
 	err = p.Validate()
 	if err != nil {
+		logger.Log.Debugf("problem parsing: %s", err.Error())
 		return
 	}
 	db, err := database.Open(p.Family)

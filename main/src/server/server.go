@@ -1267,12 +1267,18 @@ func handlerFIND(c *gin.Context) {
 	var j models.FINDFingerprint
 	var err error
 	var message string
-	err = c.BindJSON(&j)
+	var original_data models.SensorData
+	var analysis models.LocationAnalysis
+
+	//err = c.BindJSON(&j)
+	err = c.BindJSON(&original_data)
+
 	if err == nil {
 		if c.Request.URL.Path == "/track" {
 			j.Location = ""
 		}
-		d := j.Convert()
+		//d := j.Convert()
+		d := original_data
 		err2 := processSensorData(d)
 		if err2 == nil {
 			message = "inserted data"
@@ -1281,15 +1287,18 @@ func handlerFIND(c *gin.Context) {
 		}
 	}
 	if err != nil {
+		logger.Log.Debugf("[%s] problem parsing: %s", message, err.Error())
 		c.JSON(http.StatusOK, gin.H{"message": err.Error(), "success": false})
 	} else {
-		c.JSON(http.StatusOK, gin.H{"message": message, "success": true})
+		analysis, err = api.AnalyzeSensorData(original_data)
+		c.JSON(http.StatusOK, gin.H{"message": analysis, "success": true})
 	}
 }
 
 func processSensorData(p models.SensorData, justSave ...bool) (err error) {
 	err = api.SaveSensorData(p)
 	if err != nil {
+		logger.Log.Debugf("problem parsing: %s", err.Error())
 		return
 	}
 
@@ -1338,7 +1347,7 @@ func sendOutData(p models.SensorData) (analysis models.LocationAnalysis, err err
 
 	p.Family = strings.TrimSpace(strings.ToLower(p.Family))
 
-	// logger.Log.Debugf("sending data over websockets (%s/%s):%s", p.Family, p.Device, bTarget)
+	logger.Log.Debugf("sending data over websockets (%s/%s):%s", p.Family, p.Device, bTarget)
 	SendMessageOverWebsockets(p.Family, p.Device, bTarget)
 	SendMessageOverWebsockets(p.Family, "all", bTarget)
 
@@ -1364,7 +1373,7 @@ func middleWareHandler() gin.HandlerFunc {
 func addCORS(c *gin.Context) {
 	c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	c.Writer.Header().Set("Access-Control-Max-Age", "86400")
-	c.Writer.Header().Set("Access-Control-Allow-Methods", "GET")
+	c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
 	c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, X-Max")
 	c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
 }

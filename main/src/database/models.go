@@ -5,6 +5,7 @@ import (
 	"sync"
 
 	_ "github.com/mattn/go-sqlite3"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/scando1993/ColdChainTrackerServer/main/src/logging"
 )
 

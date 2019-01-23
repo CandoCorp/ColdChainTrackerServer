@@ -6,6 +6,7 @@ require (
 	github.com/eclipse/paho.mqtt.golang v1.1.1
 	github.com/gin-contrib/gzip v0.0.0-20190101123152-0eb78e93402e
 	github.com/gin-gonic/gin v1.3.0
+	github.com/go-sql-driver/mysql v1.4.1
 	github.com/gorilla/websocket v1.4.0
 	github.com/mars9/crypt v0.0.0-20150406101210-65899cf653ff
 	github.com/mattn/go-isatty v0.0.4
