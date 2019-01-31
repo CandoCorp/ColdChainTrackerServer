@@ -20,6 +20,8 @@ type SensorData struct {
 	Sensors map[string]map[string]interface{} `json:"s"`
 	// GPS is optional
 	GPS GPS `json:"gps,omitempty"`
+
+	Temperature map[string]int `json:"t,omitempty"`
 }
 
 // GPS contains GPS data
@@ -67,6 +69,14 @@ type FINDFingerprint struct {
 type Router struct {
 	Mac  string `json:"mac"`
 	Rssi int    `json:"rssi"`
+}
+
+type RawSensorData struct {
+	SensorId		string		`json:"sensorId"`
+	Timestamp		uint64		`json:"timestamp"`
+	Temperature 	int			`json:"temperature"`
+	Wifi			[]Router	`json:"wifi"`
+	Battery			int			`json:"battery"`
 }
 
 // Convert will convert a FINDFingerprint into the new type of data,

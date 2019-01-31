@@ -20,6 +20,7 @@ import (
 
 func main() {
 	aiPort := flag.String("ai", "8002", "port for the AI server")
+	TCPPort := flag.String("tcp", "65432", "port for the TCP server")
 	port := flag.String("port", "8003", "port for the data (this) server")
 	debug := flag.Bool("debug", false, "turn on debug mode")
 	mqttServer := flag.String("mqtt-server", "", "add MQTT server")
@@ -74,6 +75,7 @@ func main() {
 	api.AIPort = *aiPort
 	api.MainPort = *port
 	server.Port = *port
+	server.TCP_Port = *TCPPort
 	server.UseMQTT = mqtt.Server != ""
 
 	if *memprofile {
@@ -115,11 +117,25 @@ func main() {
 			log.Println("finished profiling")
 		}()
 	}
+
+	go func() {
+		_err := server.Tcp_Run()
+
+		if _err != nil {
+			fmt.Print("error: ")
+			fmt.Println(_err)
+		}
+	}()
+
 	if *dump != "" {
 		err = api.Dump(*dump)
 	} else {
 		err = server.Run()
+
 	}
+
+
+
 	if err != nil {
 		fmt.Print("error: ")
 		fmt.Println(err)

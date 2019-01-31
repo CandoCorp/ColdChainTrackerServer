@@ -22,7 +22,8 @@ import (
 
 var (
 	// Server is the address of the broker to use for MQTT
-	Server                   = "localhost:1883"
+	//Server                   = "localhost:1883"
+	Server                   = "172.16.10.202:1883"
 	Debug                    = false
 	logger                   *logging.SeelogWrapper
 	Existing                 = false

@@ -71,31 +71,6 @@ func Run() (err error) {
 		}
 
 	})
-	r.DELETE("/api/v1/database/:family", func(c *gin.Context) {
-		family := strings.ToLower(c.Param("family"))
-		db, err := database.Open(family, true)
-		if err == nil {
-			db.Delete()
-			db.Close()
-			c.JSON(200, gin.H{"success": true, "message": "deleted " + family})
-		} else {
-			c.JSON(200, gin.H{"success": false, "message": err.Error()})
-		}
-
-	})
-	r.DELETE("/api/v1/location/:family/:location", func(c *gin.Context) {
-		family := strings.ToLower(c.Param("family"))
-		db, err := database.Open(family, true)
-		if err == nil {
-			err = db.DeleteLocation(c.Param("location"))
-			db.Close()
-			if err == nil {
-				c.JSON(200, gin.H{"success": true, "message": "deleted location '" + c.Param("location") + "' for " + family})
-				return
-			}
-		}
-		c.JSON(200, gin.H{"success": false, "message": err.Error()})
-	})
 	r.GET("/view/analysis/:family", func(c *gin.Context) {
 		family := strings.ToLower(c.Param("family"))
 		d, err := database.Open(family, true)
@@ -141,7 +116,10 @@ func Run() (err error) {
 
 		err := func(family string) (err error) {
 			gpsData, err := api.GetGPSData(family)
+			logger.Log.Debug(gpsData)
+
 			if err != nil {
+				logger.Log.Error(err)
 				return
 			}
 
@@ -152,10 +130,12 @@ func Run() (err error) {
 				Latitude  template.JS
 				Longitude template.JS
 			}
+
 			data := make([]gpsdata, len(gpsData))
 			avgLat := 0.0
 			avgLon := 0.0
 			i := 0
+
 			for loc := range gpsData {
 				data[i].Hash = template.JS(utils.Md5Sum(loc))
 				data[i].Location = template.JS(loc)
@@ -171,6 +151,7 @@ func Run() (err error) {
 				data[i].Longitude = template.JS(fmt.Sprintf("%2.10f", longitude))
 				i++
 			}
+
 			avgLat = avgLat / float64(len(gpsData))
 			avgLon = avgLon / float64(len(gpsData))
 
@@ -181,7 +162,7 @@ func Run() (err error) {
 				"FamilyJS": template.JS(family),
 				"DeviceJS": template.JS("all"),
 				"Data":     data,
-				"Center":   template.JS(fmt.Sprintf("%2.5f,%2.5f", avgLat, avgLon)),
+				"Center":   template.JS(fmt.Sprintf("%2.7f,%2.7f", avgLat, avgLon)),
 			})
 			return
 		}(family)
@@ -250,34 +231,6 @@ func Run() (err error) {
 				"Family":       family,
 			})
 		}
-	})
-	r.GET("/api/v1/database/:family", func(c *gin.Context) {
-		db, err := database.Open(strings.ToLower(c.Param("family")), true)
-		if err == nil {
-			var dumped string
-			dumped, err = db.Dump()
-			db.Close()
-			if err == nil {
-				c.String(200, dumped)
-				return
-			}
-		}
-		c.JSON(200, gin.H{"success": false, "message": err.Error()})
-	})
-	r.GET("/api/v1/data/:family", func(c *gin.Context) {
-		var sensors []models.SensorData
-		var message string
-		db, err := database.Open(strings.ToLower(c.Param("family")), true)
-		if err == nil {
-			sensors, err = db.GetAllForClassification()
-			db.Close()
-		}
-		if err != nil {
-			message = err.Error()
-		} else {
-			message = fmt.Sprintf("got %d data", len(sensors))
-		}
-		c.JSON(200, gin.H{"success": err == nil, "message": message, "data": sensors})
 	})
 	r.GET("/view/gps/:family", func(c *gin.Context) {
 		err := func(family string) (err error) {
@@ -546,6 +499,61 @@ func Run() (err error) {
 			})
 		}
 	})
+
+
+	r.GET("/api/v1/database/:family", func(c *gin.Context) {
+		db, err := database.Open(strings.ToLower(c.Param("family")), true)
+		if err == nil {
+			var dumped string
+			dumped, err = db.Dump()
+			db.Close()
+			if err == nil {
+				c.String(200, dumped)
+				return
+			}
+		}
+		c.JSON(200, gin.H{"success": false, "message": err.Error()})
+	})
+	r.GET("/api/v1/data/:family", func(c *gin.Context) {
+		var sensors []models.SensorData
+		var message string
+		db, err := database.Open(strings.ToLower(c.Param("family")), true)
+		if err == nil {
+			sensors, err = db.GetAllForClassification()
+			db.Close()
+		}
+		if err != nil {
+			message = err.Error()
+		} else {
+			message = fmt.Sprintf("got %d data", len(sensors))
+		}
+		c.JSON(200, gin.H{"success": err == nil, "message": message, "data": sensors})
+	})
+	r.DELETE("/api/v1/database/:family", func(c *gin.Context) {
+		family := strings.ToLower(c.Param("family"))
+		db, err := database.Open(family, true)
+		if err == nil {
+			db.Delete()
+			db.Close()
+			c.JSON(200, gin.H{"success": true, "message": "deleted " + family})
+		} else {
+			c.JSON(200, gin.H{"success": false, "message": err.Error()})
+		}
+
+	})
+	r.DELETE("/api/v1/location/:family/:location", func(c *gin.Context) {
+		family := strings.ToLower(c.Param("family"))
+		db, err := database.Open(family, true)
+		if err == nil {
+			err = db.DeleteLocation(c.Param("location"))
+			db.Close()
+			if err == nil {
+				c.JSON(200, gin.H{"success": true, "message": "deleted location '" + c.Param("location") + "' for " + family})
+				return
+			}
+		}
+		c.JSON(200, gin.H{"success": false, "message": err.Error()})
+	})
 	r.OPTIONS("/api/v1/devices/*family", func(c *gin.Context) { c.String(200, "OK") })
 	r.GET("/api/v1/devices/*family", handlerApiV1Devices)
 	r.OPTIONS("/api/v1/location/:family/*device", func(c *gin.Context) { c.String(200, "OK") })
@@ -562,6 +570,7 @@ func Run() (err error) {
 	r.POST("/api/v1/settings/passive", handlerReverseSettings)
 	r.OPTIONS("/api/v1/efficacy/:family", func(c *gin.Context) { c.String(200, "OK") })
 	r.GET("/api/v1/efficacy/:family", handlerEfficacy)
+
 	r.GET("/ping", ping)
 	r.GET("/now", handlerNow)
 	r.GET("/test", handleTest)
@@ -575,6 +584,7 @@ func Run() (err error) {
 	r.POST("/passive", handlerReverse)       // typical data handler
 	r.POST("/learn", handlerFIND)            // backwards-compatible with FIND for learning
 	r.POST("/track", handlerFIND)            // backwards-compatible with FIND for tracking
+
 	logger.Log.Infof("Running on 0.0.0.0:%s", Port)
 
 	err = r.Run(":" + Port) // listen and serve on 0.0.0.0:8080
@@ -586,6 +596,7 @@ func replace(input, from, to string) string {
 }
 
 func ping(c *gin.Context) {
+	logger.Log.Debug("PONG!!!")
 	c.String(http.StatusOK, "pong")
 }
 

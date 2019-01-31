@@ -2,11 +2,508 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4076a575-e60a-4f9d-bb74-f1f417131118" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/server/tcp_server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/src/learn.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/src/learn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/src/naive_bayes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/src/naive_bayes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/src/naive_bayes2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/src/naive_bayes2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/src/plot_locations.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/src/plot_locations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/src/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/src/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/src/test_learn.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/src/test_learn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/src/test_ttldict.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/src/test_ttldict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/src/testdb.nb.db" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/src/testdb.nb.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/src/ttldict.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/src/ttldict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/testing/naive_bayes.db" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/testing/naive_bayes.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/testing/reverse.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/testing/reverse.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/testing/testdb.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/testing/testdb.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/testing/testdb_single_rec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/testing/testdb_single_rec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/testing/testing1.nb.db" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/testing/testing1.nb.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/analysis.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/analysis.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/calibration.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/calibration.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/calibration_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/calibration_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/dump.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/dump.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/fingerprints.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/fingerprints.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/gps.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/gps.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/location_images.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/location_images.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/logger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/models.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/models.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/api_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/api_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/db_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/db_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/logger.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/models.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/models.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/nb1/nb.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/nb1/nb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/nb1/nb_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/nb1/nb_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/nb2/nb2.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/nb2/nb2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logging/logging.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/logging/logging.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/binaryStats.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/binaryStats.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/byLocation.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/byLocation.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/locationAnalysis.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/locationAnalysis.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/reverseRollingData.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/reverseRollingData.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/sensorData.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/sensorData.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/sensorData_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/sensorData_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mqtt/mqtt.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/mqtt/mqtt.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mqtt/mqtt_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/mqtt/mqtt_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/logger.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/server_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/websockets.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/websockets.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/websockets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/websockets.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/utils.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/animate.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/animate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-select.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-select.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap4.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap4.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/cs-skin-elastic.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/cs-skin-elastic.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/flag-icon.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/flag-icon.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/floating-labels.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/floating-labels.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/font-awesome.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/jquery-ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/jquery-ui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/lib/chosen/chosen-sprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/lib/chosen/chosen-sprite.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/lib/chosen/chosen-sprite@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/lib/chosen/chosen-sprite@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/lib/chosen/chosen.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/lib/chosen/chosen.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/lib/chosen/chosen.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/lib/chosen/chosen.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/lib/datatable/buttons.bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/lib/datatable/buttons.bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/lib/datatable/buttons.dataTables.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/lib/datatable/buttons.dataTables.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/lib/datatable/dataTables.bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/lib/datatable/dataTables.bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/lib/vector-map/jqvmap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/lib/vector-map/jqvmap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/main.4cbd5e80.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.4cbd5e80.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/main.4cbd5e80.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.4cbd5e80.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/normalize.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/themify-icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/themify-icons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/toastr.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/toastr.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/variables.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/variables.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/FontAwesome.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/codropsicons/codropsicons.eot" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/codropsicons/codropsicons.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/codropsicons/codropsicons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/codropsicons/codropsicons.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/codropsicons/codropsicons.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/codropsicons/codropsicons.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/codropsicons/codropsicons.woff" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/codropsicons/codropsicons.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/codropsicons/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/codropsicons/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/codropsicons/license.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/codropsicons/license.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/icomoon/icomoon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/icomoon/icomoon.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/icomoon/icomoon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/icomoon/icomoon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/icomoon/icomoon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/icomoon/icomoon.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/icomoon/icomoon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/icomoon/icomoon.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/icomoon/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/icomoon/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/themify.eot" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/themify.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/themify.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/themify.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/themify.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/themify.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/themify.woff" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/themify.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/Blocks-1s-200px.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/Blocks-1s-200px.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/favicon-32x32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/find3-promo-bg.bk.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/find3-promo-bg.bk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/find3-promo-bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/find3-promo-bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/find3-promo-black.bk.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/find3-promo-black.bk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/find3-promo-black.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/find3-promo-black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/find3-promo-green.bk.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/find3-promo-green.bk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/find3-promo-green.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/find3-promo-green.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/find3-promo.bk.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/find3-promo.bk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/find3-promo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/find3-promo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/find3_bw.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/find3_bw.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/find_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/find_logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/find_logo.png.1" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/find_logo.png.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/mail1.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/mail1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/splash.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/splash.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/chartjs.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/chartjs.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/fonta.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/fonta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery-ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/jquery.autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery.autocomplete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/less.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/less.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/chart-js/Chart.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/chart-js/Chart.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/chart-js/chartjs-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/chart-js/chartjs-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/chosen/chosen.jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/chosen/chosen.jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/chosen/chosen.jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/chosen/chosen.jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/chosen/chosen.proto.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/chosen/chosen.proto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/chosen/chosen.proto.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/chosen/chosen.proto.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/data-table/buttons.bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/data-table/buttons.bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/data-table/buttons.colVis.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/data-table/buttons.colVis.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/data-table/buttons.flash.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/data-table/buttons.flash.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/data-table/buttons.html5.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/data-table/buttons.html5.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/data-table/buttons.print.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/data-table/buttons.print.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/data-table/dataTables.bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/data-table/dataTables.bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/data-table/dataTables.buttons.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/data-table/dataTables.buttons.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/data-table/datatables-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/data-table/datatables-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/data-table/datatables.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/data-table/datatables.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/data-table/jquery-1.12.4.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/data-table/jquery-1.12.4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/data-table/jquery.dataTables.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/data-table/jquery.dataTables.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/data-table/jszip.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/data-table/jszip.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/data-table/pdfmake.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/data-table/pdfmake.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/data-table/vfs_fonts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/data-table/vfs_fonts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/flot-chart/curvedLines.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/flot-chart/curvedLines.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/flot-chart/excanvas.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/flot-chart/excanvas.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/flot-chart/flot-chart-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/flot-chart/flot-chart-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/flot-chart/flot-tooltip/jquery.flot.tooltip.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/flot-chart/flot-tooltip/jquery.flot.tooltip.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/flot-chart/jquery.flot.categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/flot-chart/jquery.flot.categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/flot-chart/jquery.flot.crosshair.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/flot-chart/jquery.flot.crosshair.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/flot-chart/jquery.flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/flot-chart/jquery.flot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/flot-chart/jquery.flot.pie.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/flot-chart/jquery.flot.pie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/flot-chart/jquery.flot.resize.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/flot-chart/jquery.flot.resize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/flot-chart/jquery.flot.stack.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/flot-chart/jquery.flot.stack.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/flot-chart/jquery.flot.threshold.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/flot-chart/jquery.flot.threshold.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/flot-chart/jquery.flot.time.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/flot-chart/jquery.flot.time.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/gauge/gauge.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/gauge/gauge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/gmap/gmap.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/gmap/gmap.init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/gmap/gmapApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/gmap/gmapApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/gmap/gmaps.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/gmap/gmaps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/gmap/gmaps.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/gmap/gmaps.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/peitychart/jquery.peity.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/peitychart/jquery.peity.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/peitychart/peitychart.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/peitychart/peitychart.init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.algeria.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.algeria.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.argentina.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.argentina.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.brazil.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.brazil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.europe.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.europe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.france.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.france.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.germany.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.germany.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.greece.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.greece.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.iran.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.iran.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.iraq.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.iraq.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.russia.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.russia.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.tunisia.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.tunisia.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.turkey.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.turkey.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.usa.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.usa.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.world.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/country/jquery.vmap.world.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/jquery.vmap.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/jquery.vmap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/jquery.vmap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/jquery.vmap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/jquery.vmap.sampledata.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/jquery.vmap.sampledata.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lib/vector-map/vector.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lib/vector-map/vector.init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.96b8ca30.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.96b8ca30.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.96b8ca30.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.96b8ca30.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/plugins.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/popper.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/selectFx.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/selectFx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/sha256.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/sha256.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/toastr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/toastr.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/vendor/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/vendor/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/vendor/jquery-1.11.3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/vendor/jquery-1.11.3.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/vendor/jquery-2.1.4.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/vendor/jquery-2.1.4.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/vendor/modernizr-2.8.3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/vendor/modernizr-2.8.3.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/widgets.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/widgets.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/logo.5d5d9eef.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/logo.5d5d9eef.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/oui.json" beforeDir="false" afterPath="$PROJECT_DIR$/static/oui.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/0c2f4e7e3ce607a0f7f238a71122520ed74aaa15/_gauge.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/0c2f4e7e3ce607a0f7f238a71122520ed74aaa15/_gauge.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/0c2f4e7e3ce607a0f7f238a71122520ed74aaa15/_switches.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/0c2f4e7e3ce607a0f7f238a71122520ed74aaa15/_switches.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/0c2f4e7e3ce607a0f7f238a71122520ed74aaa15/_widgets.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/0c2f4e7e3ce607a0f7f238a71122520ed74aaa15/_widgets.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/0c2f4e7e3ce607a0f7f238a71122520ed74aaa15/style.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/0c2f4e7e3ce607a0f7f238a71122520ed74aaa15/style.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/0c2f4e7e3ce607a0f7f238a71122520ed74aaa15/variables.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/0c2f4e7e3ce607a0f7f238a71122520ed74aaa15/variables.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_alert.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_alert.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_background-variant.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_background-variant.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_badge.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_badge.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_border-radius.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_border-radius.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_box-shadow.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_box-shadow.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_breakpoints.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_breakpoints.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_buttons.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_buttons.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_caret.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_caret.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_clearfix.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_clearfix.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_float.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_float.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_forms.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_forms.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_gradients.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_gradients.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_grid-framework.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_grid-framework.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_grid.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_grid.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_hover.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_hover.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_image.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_image.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_list-group.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_list-group.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_lists.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_lists.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_nav-divider.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_nav-divider.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_pagination.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_pagination.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_reset-text.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_reset-text.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_resize.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_resize.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_screen-reader.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_screen-reader.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_size.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_size.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_table-row.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_table-row.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_text-emphasis.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_text-emphasis.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_text-hide.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_text-hide.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_text-truncate.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_text-truncate.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_transition.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_transition.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_visibility.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/1ea663541d8aa72314e8caea4edf18e46ea3ed2e/_visibility.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_alert.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_alert.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_badge.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_badge.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_breadcrumb.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_breadcrumb.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_button-group.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_button-group.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_buttons.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_buttons.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_card.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_card.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_carousel.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_carousel.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_close.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_close.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_code.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_code.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_custom-forms.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_custom-forms.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_dropdown.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_dropdown.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_forms.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_forms.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_functions.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_functions.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_grid.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_grid.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_images.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_images.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_input-group.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_input-group.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_jumbotron.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_jumbotron.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_list-group.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_list-group.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_media.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_media.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_mixins.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_mixins.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_modal.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_modal.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_nav.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_nav.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_navbar.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_navbar.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_pagination.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_pagination.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_popover.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_popover.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_print.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_print.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_progress.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_progress.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_reboot.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_reboot.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_root.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_root.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_tables.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_tables.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_tooltip.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_tooltip.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_transitions.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_transitions.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_type.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_type.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_utilities.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_utilities.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_variables.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/_variables.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/bootstrap.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/590089d940a3045eb8c8b24b183c435305a7d5a9/bootstrap.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_alert.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_alert.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_badge.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_badge.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_breadcrumb.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_breadcrumb.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_button-group.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_button-group.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_buttons.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_buttons.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_card.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_card.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_carousel.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_carousel.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_close.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_close.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_code.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_code.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_custom-forms.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_custom-forms.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_dropdown.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_dropdown.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_forms.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_forms.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_functions.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_functions.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_grid.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_grid.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_images.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_images.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_input-group.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_input-group.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_jumbotron.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_jumbotron.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_list-group.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_list-group.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_media.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_media.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_mixins.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_mixins.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_modal.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_modal.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_nav.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_nav.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_navbar.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_navbar.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_pagination.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_pagination.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_popover.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_popover.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_print.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_print.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_progress.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_progress.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_reboot.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_reboot.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_root.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_root.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_tables.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_tables.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_tooltip.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_tooltip.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_transitions.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_transitions.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_type.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_type.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_utilities.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_utilities.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_variables.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/_variables.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/bootstrap.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/62cfef4a3fbfab02df9a4ee49a4d404e06273937/bootstrap.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6da42945727bdadaec570db1596987e0a46bfa4d/_gauge.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6da42945727bdadaec570db1596987e0a46bfa4d/_gauge.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6da42945727bdadaec570db1596987e0a46bfa4d/_switches.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6da42945727bdadaec570db1596987e0a46bfa4d/_switches.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6da42945727bdadaec570db1596987e0a46bfa4d/_widgets.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6da42945727bdadaec570db1596987e0a46bfa4d/_widgets.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6da42945727bdadaec570db1596987e0a46bfa4d/socials.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6da42945727bdadaec570db1596987e0a46bfa4d/socials.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6da42945727bdadaec570db1596987e0a46bfa4d/style.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6da42945727bdadaec570db1596987e0a46bfa4d/style.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6da42945727bdadaec570db1596987e0a46bfa4d/variables.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6da42945727bdadaec570db1596987e0a46bfa4d/variables.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_align.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_align.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_background.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_background.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_borders.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_borders.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_clearfix.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_clearfix.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_display.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_display.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_embed.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_embed.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_flex.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_flex.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_float.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_float.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_position.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_position.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_screenreaders.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_screenreaders.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_sizing.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_sizing.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_spacing.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_spacing.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_text.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_text.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_visibility.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/6e69d195df721b3a89b57cbd4813c065acff1449/_visibility.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_alert.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_alert.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_background-variant.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_background-variant.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_badge.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_badge.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_border-radius.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_border-radius.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_box-shadow.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_box-shadow.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_breakpoints.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_breakpoints.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_buttons.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_buttons.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_caret.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_caret.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_clearfix.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_clearfix.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_float.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_float.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_forms.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_forms.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_gradients.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_gradients.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_grid-framework.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_grid-framework.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_grid.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_grid.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_hover.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_hover.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_image.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_image.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_list-group.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_list-group.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_lists.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_lists.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_nav-divider.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_nav-divider.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_pagination.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_pagination.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_reset-text.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_reset-text.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_resize.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_resize.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_screen-reader.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_screen-reader.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_size.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_size.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_table-row.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_table-row.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_text-emphasis.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_text-emphasis.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_text-hide.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_text-hide.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_text-truncate.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_text-truncate.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_transition.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_transition.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_visibility.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/c64c3075ab570bf2e2c270d1fb05ff7e3db68931/_visibility.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_align.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_align.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_background.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_background.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_borders.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_borders.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_clearfix.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_clearfix.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_display.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_display.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_embed.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_embed.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_flex.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_flex.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_float.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_float.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_position.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_position.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_screenreaders.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_screenreaders.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_sizing.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_sizing.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_spacing.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_spacing.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_text.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_text.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_visibility.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/.sass-cache/d192277f41c6848ff7411af310ee7b2a42ab6d76/_visibility.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/_gauge.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/_gauge.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/_switches.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/_switches.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/_widgets.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/_widgets.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_alert.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_alert.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_badge.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_badge.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_breadcrumb.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_breadcrumb.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_button-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_button-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_carousel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_close.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_close.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_code.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_code.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_custom-forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_custom-forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_dropdown.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_functions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_functions.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_grid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_images.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_images.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_input-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_input-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_jumbotron.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_jumbotron.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_list-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_list-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_media.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_media.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_modal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_nav.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_navbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_pagination.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_popover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_popover.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_print.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_print.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_progress.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_progress.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_reboot.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_reboot.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_root.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_root.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_tables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_tables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_tooltip.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_tooltip.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_transitions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_transitions.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_type.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_type.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_utilities.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_utilities.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap-grid.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap-grid.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap-grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap-grid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap-reboot.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap-reboot.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap-reboot.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap-reboot.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/bootstrap.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_alert.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_alert.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_background-variant.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_background-variant.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_badge.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_badge.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_border-radius.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_border-radius.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_box-shadow.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_box-shadow.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_breakpoints.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_breakpoints.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_caret.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_caret.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_clearfix.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_clearfix.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_float.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_float.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_gradients.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_gradients.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_grid-framework.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_grid-framework.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_grid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_hover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_hover.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_image.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_image.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_list-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_list-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_lists.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_lists.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_nav-divider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_nav-divider.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_navbar-align.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_navbar-align.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_pagination.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_reset-text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_reset-text.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_resize.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_resize.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_screen-reader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_screen-reader.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_size.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_size.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_table-row.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_table-row.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_text-emphasis.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_text-emphasis.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_text-hide.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_text-hide.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_text-truncate.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_text-truncate.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_transition.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_transition.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_visibility.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_visibility.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_align.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_align.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_background.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_background.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_borders.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_borders.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_clearfix.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_clearfix.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_display.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_display.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_embed.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_embed.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_flex.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_flex.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_float.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_float.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_position.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_position.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_screenreaders.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_screenreaders.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_sizing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_sizing.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_spacing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_spacing.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_text.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_visibility.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/utilities/_visibility.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/socials.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/socials.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/socials.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/socials.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/socials.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/socials.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/variables.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/variables.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scss/widgets.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/widgets.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/analysis.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/footer.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gps.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gps.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/location.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/location.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/map.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/map.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/map2.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/map2.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/learn.sh" beforeDir="false" afterPath="$PROJECT_DIR$/testing/learn.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/submit_jsons.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing/submit_jsons.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/test.jsons" beforeDir="false" afterPath="$PROJECT_DIR$/testing/test.jsons" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/testdb.learn.1439597065993.jsons" beforeDir="false" afterPath="$PROJECT_DIR$/testing/testdb.learn.1439597065993.jsons" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,79 +530,50 @@
     </expand>
     <select />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/server/tcp_server.go">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="273">
+                    <caret line="22" selection-start-line="22" selection-end-line="22" />
+                    <folding>
+                      <element signature="e#16#175#0" expanded="true" />
+                      <element signature="n#!!block;n#init#0" />
+                      <element signature="n#!!block;n#createHTTPClient#0" />
+                      <element signature="n#!!block;n#bindStringData#0" />
+                      <element signature="n#!!block;n#getMACAddress#0" />
+                      <element signature="n#!!block;n#handleConnection#0" />
+                      <element signature="n#!!block;n#Tcp_Run#0" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/db.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-56">
-              <caret line="851" column="19" selection-start-line="851" selection-start-column="19" selection-end-line="851" selection-end-column="19" />
-              <folding>
-                <element signature="e#18#368#0" expanded="true" />
-                <element signature="e#2879#3123#0" />
-                <element signature="e#3817#4363#0" />
-                <element signature="e#4473#4639#0" />
-                <element signature="e#4767#4840#0" />
-                <element signature="e#5008#5843#0" />
-                <element signature="e#6029#6515#0" />
-                <element signature="e#9747#9950#0" />
-                <element signature="e#10079#10389#0" />
-                <element signature="e#10509#10813#0" />
-                <element signature="e#11007#11369#0" />
-                <element signature="e#11424#11696#0" />
-                <element signature="e#11809#12657#0" />
-                <element signature="e#12743#13659#0" />
-                <element signature="e#13760#14504#0" />
-                <element signature="e#14067#14112#0" />
-                <element signature="e#14175#14220#0" />
-                <element signature="e#14259#14423#0" />
-                <element signature="e#14344#14397#0" />
-                <element signature="e#14578#15250#0" />
-                <element signature="e#15005#15169#0" />
-                <element signature="e#15090#15143#0" />
-                <element signature="e#15203#15240#0" />
-                <element signature="e#15326#16008#0" />
-                <element signature="e#17116#17478#0" />
-                <element signature="e#17550#18096#0" />
-                <element signature="e#18160#18931#0" />
-                <element signature="e#18999#19663#0" />
-                <element signature="e#19750#20299#0" />
-                <element signature="e#20340#20786#0" />
-                <element signature="e#20855#21137#0" />
-                <element signature="e#21324#21597#0" />
-                <element signature="e#21788#22061#0" />
-                <element signature="e#23586#23819#0" />
-                <element signature="e#23861#23934#0" />
-                <element signature="e#24082#25407#0" />
-                <element signature="e#25450#25535#0" />
-                <element signature="e#25645#25941#0" />
-                <element signature="e#26027#26285#0" />
-                <element signature="e#26427#26959#0" />
-                <element signature="e#27039#29164#0" />
-                <element signature="e#29276#29902#0" />
-                <element signature="e#30070#30567#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/server.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1051">
-              <caret line="1379" selection-start-line="1379" selection-end-line="1379" />
+            <state relative-caret-position="410">
+              <caret line="1323" column="33" selection-start-line="1323" selection-start-column="33" selection-end-line="1323" selection-end-column="33" />
               <folding>
-                <element signature="e#2013#2303#0" />
-                <element signature="e#2374#2763#0" />
-                <element signature="e#2819#3326#0" />
-                <element signature="e#3401#3695#0" />
-                <element signature="e#3759#4011#0" />
-                <element signature="e#4063#5636#0" />
-                <element signature="e#5687#7045#0" />
-                <element signature="e#7103#7384#0" />
-                <element signature="e#7438#7842#0" />
-                <element signature="e#7893#9140#0" />
-                <element signature="e#9197#16073#0" />
+                <element signature="e#16#481#0" expanded="true" />
+                <element signature="e#722#842#0" />
+                <element signature="e#1220#1288#0" />
+                <element signature="e#1323#1427#0" />
+                <element signature="e#1463#2034#0" />
+                <element signature="e#2090#2597#0" />
+                <element signature="e#2672#2966#0" />
+                <element signature="e#3030#3282#0" />
                 <element signature="n#!!block;n#replace#0" />
                 <element signature="n#!!block;n#handleTest#0" />
                 <element signature="n#!!block;n#handlerApiV1Devices#0" />
@@ -117,12 +585,25 @@
                 <element signature="n#!!block;n#handlerApiV1Calibrate#0" />
                 <element signature="n#!!block;n#handlerMQTT#0" />
                 <element signature="n#!!block;n#sendOutLocation#0" />
+                <element signature="n#!!block;n#handlerNow#0" />
                 <element signature="n#!!block;n#handlerGPS#0" />
                 <element signature="n#!!block;n#handlerDataClassify#0" />
                 <element signature="n#!!block;n#handlerReverseSettings#0" />
                 <element signature="n#!!block;n#handlerReverse#0" />
                 <element signature="n#!!block;n#parseRollingData#0" />
+                <element signature="n#!!block;n#handlerFIND#0" />
+                <element signature="n#!!block;n#middleWareHandler#0" />
+                <element signature="n#!!block;n#addCORS#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/gps.tmpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -130,29 +611,51 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="75" column="13" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/websockets.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
+            <state relative-caret-position="1560">
+              <caret line="120" column="15" selection-start-line="120" selection-start-column="15" selection-end-line="120" selection-end-column="15" />
               <folding>
-                <element signature="e#16#125#0" expanded="true" />
+                <element signature="e#14#368#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/sensorData.go">
+        <entry file="file://$PROJECT_DIR$/src/api/analysis.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="75" column="38" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
+            <state relative-caret-position="237">
+              <caret line="92" column="31" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+              <folding>
+                <element signature="e#13#402#0" expanded="true" />
+                <element signature="e#1036#1197#0" />
+                <element signature="e#1627#1745#0" />
+                <element signature="e#1920#2012#0" />
+                <element signature="e#2186#2278#0" />
+                <element signature="e#2373#2467#0" />
+                <element signature="n#!!block;n#determineBestGuess#0" />
+                <element signature="n#!!block;n#GetByLocation#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/models.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+              <folding>
+                <element signature="e#18#187#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/map2.tmpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="186" column="22" lean-forward="true" selection-start-line="186" selection-start-column="22" selection-end-line="186" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -160,31 +663,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api/fingerprints.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+            <state relative-caret-position="239">
+              <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testing/submit_jsons.py">
+        <entry file="file://$PROJECT_DIR$/src/models/sensorData.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+            <state relative-caret-position="154">
+              <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
+              <folding>
+                <element signature="e#16#55#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testing/test.jsons">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/sensorData_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="94" selection-start-line="1" selection-start-column="94" selection-end-line="1" selection-end-column="94" />
+            <state relative-caret-position="1245">
+              <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -206,13 +719,20 @@
         <option value="$PROJECT_DIR$/src/database/db_mysql.go" />
         <option value="$PROJECT_DIR$/src/api/fingerprints.go" />
         <option value="$PROJECT_DIR$/src/server/websockets.go" />
+        <option value="$PROJECT_DIR$/src/mqtt/mqtt.go" />
+        <option value="$PROJECT_DIR$/templates/header.tmpl" />
         <option value="$PROJECT_DIR$/src/server/server.go" />
+        <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/src/models/sensorData.go" />
+        <option value="$PROJECT_DIR$/templates/map2.tmpl" />
+        <option value="$PROJECT_DIR$/src/server/tcp_server.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1576" />
-    <option name="width" value="768" />
+    <option name="x" value="47" />
+    <option name="y" value="25" />
+    <option name="width" value="576" />
     <option name="height" value="555" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -221,7 +741,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -232,13 +751,30 @@
             <path>
               <item name="main" type="b2602c69:ProjectViewProjectNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="main" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="main" type="b2602c69:ProjectViewProjectNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="main" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="main" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="main" type="b2602c69:ProjectViewProjectNode" />
@@ -255,15 +791,21 @@
             <path>
               <item name="main" type="b2602c69:ProjectViewProjectNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="testing" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="main" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
@@ -271,6 +813,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -291,10 +834,10 @@
     </option>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="-2" width="768" height="1368" extended-state="6" />
+    <frame x="47" y="25" width="1319" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.6204986" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17517675" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -307,7 +850,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.6612378" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.22638437" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -321,6 +864,17 @@
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/server/server.go</url>
+          <line>594</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/go.mod">
       <provider selected="true" editor-type-id="text-editor">
@@ -330,13 +884,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/database/db_mysql.go" />
-    <entry file="file://$PROJECT_DIR$/src/mqtt/mqtt.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3000">
-          <caret line="218" column="34" selection-start-line="218" selection-start-column="34" selection-end-line="218" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/database/api_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -354,13 +901,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/models.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="66" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api/models.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -374,23 +914,11 @@
     <entry file="file://$PROJECT_DIR$/testing/testdb.learn.1439597065993.jsons">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/images/zxo1qZZb/zakhome floor 2 office.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/images/zxo1qZZb/zakhome floor 2 bedroom.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/images/zxo1qZZb/zakhome floor 1 kitchen.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/images/2UBX5wtyYktyw/lab.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/2UBX5wtyYktyw.find3.ai">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-765" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/images/zxo1qZZb/zakhome floor 2 office.png" />
+    <entry file="file://$PROJECT_DIR$/data/images/zxo1qZZb/zakhome floor 2 bedroom.png" />
+    <entry file="file://$PROJECT_DIR$/data/images/zxo1qZZb/zakhome floor 1 kitchen.png" />
+    <entry file="file://$PROJECT_DIR$/data/images/2UBX5wtyYktyw/lab.png" />
+    <entry file="file://$PROJECT_DIR$/data/2UBX5wtyYktyw.find3.ai" />
     <entry file="file://$PROJECT_DIR$/../../../../../pkg/mod/github.com/schollz/stringsizer@v1.1.0/sizer.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
@@ -405,13 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../pkg/mod/github.com/gin-gonic/gin@v1.3.0/context.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="509" column="18" selection-start-line="509" selection-start-column="18" selection-end-line="509" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/database/db_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
@@ -419,23 +940,110 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/go/src/encoding/json/encode.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="165" column="13" lean-forward="true" selection-start-line="165" selection-start-column="13" selection-end-line="165" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../pkg/mod/github.com/gorilla/websocket@v1.4.0/conn.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="1025" column="47" selection-start-line="1025" selection-start-column="47" selection-end-line="1025" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/location_images.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing/test.jsons">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="83" selection-start-line="4" selection-start-column="13" selection-end-line="17" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing/submit_jsons.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mqtt/mqtt_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" selection-start-line="10" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mqtt/mqtt.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-145">
+          <caret line="44" column="31" lean-forward="true" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+          <folding>
+            <element signature="n#!!block;n#updateMosquittoConfig#0" />
+            <element signature="n#!!block;n#messageReceived#0" />
+            <element signature="n#!!block;n#sendOutData#0" />
+            <element signature="n#!!block;n#mqttBuildFingerprint#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/websockets.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
+          <folding>
+            <element signature="e#16#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+        <state relative-caret-position="295">
+          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/footer.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/header.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="641">
+          <caret line="128" column="70" selection-start-line="128" selection-start-column="70" selection-end-line="128" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/gps.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="59" column="13" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/database/db.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-56">
-          <caret line="851" column="19" selection-start-line="851" selection-start-column="19" selection-end-line="851" selection-end-column="19" />
+        <state relative-caret-position="319">
+          <caret line="1181" column="22" selection-start-line="1181" selection-start-column="22" selection-end-line="1181" selection-end-column="22" />
           <folding>
             <element signature="e#18#368#0" expanded="true" />
+            <element signature="e#791#2785#0" />
             <element signature="e#2879#3123#0" />
+            <element signature="e#3241#3677#0" />
             <element signature="e#3817#4363#0" />
             <element signature="e#4473#4639#0" />
-            <element signature="e#4767#4840#0" />
             <element signature="e#5008#5843#0" />
             <element signature="e#6029#6515#0" />
             <element signature="e#9747#9950#0" />
@@ -464,6 +1072,7 @@
             <element signature="e#20855#21137#0" />
             <element signature="e#21324#21597#0" />
             <element signature="e#21788#22061#0" />
+            <element signature="e#22276#23547#0" />
             <element signature="e#23586#23819#0" />
             <element signature="e#23861#23934#0" />
             <element signature="e#24082#25407#0" />
@@ -473,93 +1082,130 @@
             <element signature="e#26427#26959#0" />
             <element signature="e#27039#29164#0" />
             <element signature="e#29276#29902#0" />
-            <element signature="e#30070#30567#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/sensorData.go">
+    <entry file="file://$PROJECT_DIR$/templates/map.tmpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="75" column="38" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
+        <state relative-caret-position="-1989">
+          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/go/src/encoding/json/encode.go">
+    <entry file="file://$PROJECT_DIR$/../../../../../pkg/mod/github.com/gin-gonic/gin@v1.3.0/utils.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="165" column="13" lean-forward="true" selection-start-line="165" selection-start-column="13" selection-end-line="165" selection-end-column="13" />
+        <state relative-caret-position="269">
+          <caret line="136" column="5" selection-start-line="136" selection-start-column="5" selection-end-line="136" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../pkg/mod/github.com/gorilla/websocket@v1.4.0/conn.go">
+    <entry file="file:///usr/local/go/src/net/http/server.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="1025" column="47" selection-start-line="1025" selection-start-column="47" selection-end-line="1025" selection-end-column="47" />
+        <state relative-caret-position="-1254">
+          <caret line="2444" column="5" selection-start-line="2444" selection-start-column="5" selection-end-line="2444" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/analysis.go">
+    <entry file="file://$PROJECT_DIR$/../../../../../pkg/mod/github.com/gin-gonic/gin@v1.3.0/gin.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+        <state relative-caret-position="269">
+          <caret line="286" column="22" lean-forward="true" selection-start-line="286" selection-start-column="22" selection-end-line="286" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/location_images.go">
+    <entry file="file:///usr/local/go/src/net/net.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        <state relative-caret-position="210">
+          <caret line="121" column="35" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testing/submit_jsons.py">
+    <entry file="file://$PROJECT_DIR$/../../../../../pkg/mod/github.com/cihub/seelog@v0.0.0-20170130134532-f561c5e57575/logger.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        <state relative-caret-position="210">
+          <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/fingerprints.go">
+    <entry file="file://$PROJECT_DIR$/../../../../../pkg/mod/github.com/gin-gonic/gin@v1.3.0/binding/binding.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+        <state relative-caret-position="194">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/websockets.go">
+    <entry file="file://$PROJECT_DIR$/templates/gps.tmpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
-          <folding>
-            <element signature="e#16#125#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="75" column="13" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+        <state relative-caret-position="1560">
+          <caret line="120" column="15" selection-start-line="120" selection-start-column="15" selection-end-line="120" selection-end-column="15" />
+          <folding>
+            <element signature="e#14#368#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/models.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding>
+            <element signature="e#18#187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/sensorData_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/fingerprints.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../pkg/mod/github.com/gin-gonic/gin@v1.3.0/context.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="555" column="15" selection-start-line="555" selection-start-column="15" selection-end-line="555" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/sensorData.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
+          <folding>
+            <element signature="e#16#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/server.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1051">
-          <caret line="1379" selection-start-line="1379" selection-end-line="1379" />
+        <state relative-caret-position="410">
+          <caret line="1323" column="33" selection-start-line="1323" selection-start-column="33" selection-end-line="1323" selection-end-column="33" />
           <folding>
-            <element signature="e#2013#2303#0" />
-            <element signature="e#2374#2763#0" />
-            <element signature="e#2819#3326#0" />
-            <element signature="e#3401#3695#0" />
-            <element signature="e#3759#4011#0" />
-            <element signature="e#4063#5636#0" />
-            <element signature="e#5687#7045#0" />
-            <element signature="e#7103#7384#0" />
-            <element signature="e#7438#7842#0" />
-            <element signature="e#7893#9140#0" />
-            <element signature="e#9197#16073#0" />
+            <element signature="e#16#481#0" expanded="true" />
+            <element signature="e#722#842#0" />
+            <element signature="e#1220#1288#0" />
+            <element signature="e#1323#1427#0" />
+            <element signature="e#1463#2034#0" />
+            <element signature="e#2090#2597#0" />
+            <element signature="e#2672#2966#0" />
+            <element signature="e#3030#3282#0" />
             <element signature="n#!!block;n#replace#0" />
             <element signature="n#!!block;n#handleTest#0" />
             <element signature="n#!!block;n#handlerApiV1Devices#0" />
@@ -571,19 +1217,56 @@
             <element signature="n#!!block;n#handlerApiV1Calibrate#0" />
             <element signature="n#!!block;n#handlerMQTT#0" />
             <element signature="n#!!block;n#sendOutLocation#0" />
+            <element signature="n#!!block;n#handlerNow#0" />
             <element signature="n#!!block;n#handlerGPS#0" />
             <element signature="n#!!block;n#handlerDataClassify#0" />
             <element signature="n#!!block;n#handlerReverseSettings#0" />
             <element signature="n#!!block;n#handlerReverse#0" />
             <element signature="n#!!block;n#parseRollingData#0" />
+            <element signature="n#!!block;n#handlerFIND#0" />
+            <element signature="n#!!block;n#middleWareHandler#0" />
+            <element signature="n#!!block;n#addCORS#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testing/test.jsons">
+    <entry file="file://$PROJECT_DIR$/src/api/analysis.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="94" selection-start-line="1" selection-start-column="94" selection-end-line="1" selection-end-column="94" />
+        <state relative-caret-position="237">
+          <caret line="92" column="31" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+          <folding>
+            <element signature="e#13#402#0" expanded="true" />
+            <element signature="e#1036#1197#0" />
+            <element signature="e#1627#1745#0" />
+            <element signature="e#1920#2012#0" />
+            <element signature="e#2186#2278#0" />
+            <element signature="e#2373#2467#0" />
+            <element signature="n#!!block;n#determineBestGuess#0" />
+            <element signature="n#!!block;n#GetByLocation#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/map2.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="186" column="22" lean-forward="true" selection-start-line="186" selection-start-column="22" selection-end-line="186" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/tcp_server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#16#175#0" expanded="true" />
+            <element signature="n#!!block;n#init#0" />
+            <element signature="n#!!block;n#createHTTPClient#0" />
+            <element signature="n#!!block;n#bindStringData#0" />
+            <element signature="n#!!block;n#getMACAddress#0" />
+            <element signature="n#!!block;n#handleConnection#0" />
+            <element signature="n#!!block;n#Tcp_Run#0" />
+          </folding>
         </state>
       </provider>
     </entry>
