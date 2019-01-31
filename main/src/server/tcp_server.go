@@ -60,6 +60,7 @@ func createHTTPClient() *http.Client {
 
 func sendToEventHub(data models.RawSensorData){
 	url := "https://" + EVENT_HUB_HOST +  "/" + EVENT_HUB_ROUTE
+	logger.Log.Debug(url)
 	bPayload, err := json.Marshal(data)
 	if err != nil {
 		err = errors.Wrap(err, "problem marshaling data")
@@ -202,14 +203,17 @@ func getMACAddress (s string) (mac string, err error){
 func handleConnection(c net.Conn) {
 	logger.Log.Infof("Serving %s", c.RemoteAddr().String())
 	for {
-		netData, err := bufio.NewReader(c).ReadString('\n')
-		logger.Log.Debug(netData)
-		if err != nil {
-			logger.Log.Warn(err)
+		buff := bufio.NewScanner(c)
+		err := buff.Scan()
+		netData := buff.Text()
+		//netData, err := bufio.NewReader(c).ReadString('\n')
+		if !err  {
+			logger.Log.Warn("No more scanned data")
 			break
 		}
 
-		temp := strings.TrimSpace(string(netData))
+		//temp := strings.TrimSpace(string(netData))
+		temp := string(netData)
 		logger.Log.Debug(temp)
 
 		switch temp {
@@ -268,10 +272,9 @@ func handleConnection(c net.Conn) {
 			}
 			default:{
 				var d models.RawSensorData
-				err = bindStringData(temp, &d)
-				logger.Log.Debug(d)
-				if err != nil{
-					logger.Log.Warn(err)
+				__err := bindStringData(temp, &d)
+				if __err != nil{
+					logger.Log.Warn(__err)
 					result := "fail"
 					_, _err := c.Write([]byte(string(result)))
 					if _err != nil {
