@@ -190,7 +190,11 @@ const socketMessageListener = (event) => {
     console.log(hashedMove);
     var seenDate = new Date(0);
     seenDate.setUTCMilliseconds(data.sensors.t);
-    var popupContent = "Location: " + data['location'] + "<br>Probability: " + Math.round(data['guesses'][0]['probability']*100) + "%" + "<br>Seen at " + seenDate; 
+    var popupContent =  "Location: " + data['location'] +
+                        "<br>Probability: " +
+                        Math.round(data['guesses'][0]['probability']*100) + "%"
+                        + "<br>Temperature: " + data['temperature']
+                        + "<br>Seen at " + seenDate;
     var toolTipContent = device;
     if (!marker.hasOwnProperty(device)) {
         marker[device] = L.marker([

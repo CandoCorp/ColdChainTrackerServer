@@ -47,6 +47,20 @@ func (d *Database) MakeTables() (err error) {
 		logger.Log.Error(err)
 		return
 	}
+	sqlStm := `create table keystore_temperature (key text not null primary key, value text);`
+	_, err = d.db.Exec(sqlStm)
+	if err != nil {
+		err = errors.Wrap(err, "MakeTables")
+		logger.Log.Error(err)
+		return
+	}
+	sqlStmt = `create index keystore_temperature_idx on keystore_temperature(key);`
+	_, err = d.db.Exec(sqlStmt)
+	if err != nil {
+		err = errors.Wrap(err, "MakeTables")
+		logger.Log.Error(err)
+		return
+	}
 	sqlStmt = `create table sensors (timestamp integer not null primary key, deviceid text, locationid text, unique(timestamp));`
 	_, err = d.db.Exec(sqlStmt)
 	if err != nil {
@@ -157,6 +171,58 @@ func (d *Database) Set(key string, value interface{}) (err error) {
 		return errors.Wrap(err, "Set")
 	}
 	stmt, err := tx.Prepare("insert or replace into keystore(key,value) values (?, ?)")
+	if err != nil {
+		return errors.Wrap(err, "Set")
+	}
+	defer stmt.Close()
+
+	_, err = stmt.Exec(key, string(b))
+	if err != nil {
+		return errors.Wrap(err, "Set")
+	}
+
+	err = tx.Commit()
+	if err != nil {
+		return errors.Wrap(err, "Set")
+	}
+
+	// logger.Log.Debugf("set '%s' to '%s'", key, string(b))
+	return
+}
+
+// Get will retrieve the value associated with a key.
+func (d *Database) GetTemperature(key string, v interface{}) (err error) {
+	stmt, err := d.db.Prepare("select value from keystore_temperature where key = ?")
+	if err != nil {
+		return errors.Wrap(err, "problem preparing SQL")
+	}
+	defer stmt.Close()
+	var result string
+	err = stmt.QueryRow(key).Scan(&result)
+	if err != nil {
+		return errors.Wrap(err, "problem getting key")
+	}
+
+	err = json.Unmarshal([]byte(result), &v)
+	if err != nil {
+		return
+	}
+	// logger.Log.Debugf("got %s from '%s'", string(result), key)
+	return
+}
+
+// Set will set a value in the database, when using it like a keystore.
+func (d *Database) SetTemperature(key string, value interface{}) (err error) {
+	var b []byte
+	b, err = json.Marshal(value)
+	if err != nil {
+		return err
+	}
+	tx, err := d.db.Begin()
+	if err != nil {
+		return errors.Wrap(err, "Set")
+	}
+	stmt, err := tx.Prepare("insert or replace into keystore_temperature(key,value) values (?, ?)")
 	if err != nil {
 		return errors.Wrap(err, "Set")
 	}
@@ -346,9 +412,12 @@ func (d *Database) AddSensor(s models.SensorData) (err error) {
 	newColumnList = newColumnList[:j]
 
 	sqlStatement := "insert or replace into sensors(" + strings.Join(newColumnList, ",") + ") values (" + strings.Join(argsQ, ",") + ")"
+	logger.Log.Debug("sqlStatement", sqlStatement)
+
 	stmt, err := tx.Prepare(sqlStatement)
-	// logger.Log.Debug("columns", columnList)
-	// logger.Log.Debug("args", args)
+	logger.Log.Debug("columns", columnList)
+	logger.Log.Debug("args", args)
+
 	if err != nil {
 		return errors.Wrap(err, "AddSensor, prepare "+sqlStatement)
 	}
@@ -779,10 +848,12 @@ func (d *Database) GetIDToName(table string) (idToName map[string]string, err er
 	return
 }
 
-func GetFamilies() (families []string) {
-	files, err := ioutil.ReadDir(DataFolder)
-	if err != nil {
-		log.Fatal(err)
+func GetFamilies() (families []string, err error) {
+	files, _err := ioutil.ReadDir(DataFolder)
+	if _err != nil {
+		log.Fatal(_err)
+		err = _err
+		return
 	}
 
 	families = make([]string, len(files))
@@ -855,7 +926,7 @@ func (d *Database) AddName(table string, name string) (deviceID string, err erro
 	if err == nil {
 		return
 	}
-	// logger.Log.Debugf("creating new name for %s in %s", name, table)
+	logger.Log.Debugf("creating new name for %s in %s", name, table)
 
 	// get the current count
 	stmt, err := d.db.Prepare("SELECT COUNT(id) FROM " + table)
@@ -875,7 +946,7 @@ func (d *Database) AddName(table string, name string) (deviceID string, err erro
 	// transform the device name into an ID with the current count
 	currentCount++
 	deviceID = Transform(currentCount)
-	// logger.Log.Debugf("transformed (%d) %s -> %s", currentCount, name, deviceID)
+	logger.Log.Debugf("transformed (%d) %s -> %s", currentCount, name, deviceID)
 
 	// add the device name and ID
 	tx, err := d.db.Begin()
@@ -884,7 +955,7 @@ func (d *Database) AddName(table string, name string) (deviceID string, err erro
 		return
 	}
 	query := "insert into " + table + "(id,name) values (?, ?)"
-	// logger.Log.Debugf("running query: '%s'", query)
+	logger.Log.Debugf("running query: '%s'", query)
 	stmt, err = tx.Prepare(query)
 	if err != nil {
 		err = errors.Wrap(err, "AddName")
@@ -1211,7 +1282,6 @@ func (d *Database) GetAverageGPS(location string) (lat float64, lon float64, err
 // 		return
 // 	}
 // 	defer rows.Close()
-
 // 	for rows.Next() {
 // 		err = rows.Scan(&gps.Mac, &gps.Latitude, &gps.Longitude, &gps.Altitude, &gps.Timestamp)
 // 		if err != nil {

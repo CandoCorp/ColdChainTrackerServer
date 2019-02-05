@@ -39,7 +39,8 @@ func Run() (err error) {
 		logger.Log.Debug("setup mqtt")
 	}
 
-	logger.Log.Debug("current family: ", database.GetFamilies())
+	families, _ := database.GetFamilies()
+	logger.Log.Debug("current family: ", families)
 
 	// setup gin server
 	gin.SetMode(gin.ReleaseMode)
@@ -70,6 +71,27 @@ func Run() (err error) {
 			})
 		}
 
+	})
+	r.GET("/view/temperature/:family", func(c *gin.Context) {
+		family := strings.ToLower(c.Param("family"))
+		d, err := database.Open(family, true)
+		if err != nil {
+			c.String(200, err.Error())
+			return
+		}
+		locationList, err := d.GetLocations()
+		d.Close()
+		if err != nil {
+			logger.Log.Warn("could not get locations")
+			c.String(200, err.Error())
+			return
+		}
+		c.HTML(http.StatusOK, "temperature.tmpl", gin.H{
+			"TemperatureAnalysis": true,
+			"Family":           family,
+			"Locations":        locationList,
+			"FamilyJS":         template.JS(family),
+		})
 	})
 	r.GET("/view/analysis/:family", func(c *gin.Context) {
 		family := strings.ToLower(c.Param("family"))
@@ -500,7 +522,18 @@ func Run() (err error) {
 		}
 	})
 
-
+	r.GET("/api/v1/families", func(c *gin.Context) {
+		families, err := database.GetFamilies()
+		var message string
+		if err != nil {
+			message = err.Error()
+		} else {
+			message = fmt.Sprintf("got %d families", len(families))
+		}
+		c.JSON(200, gin.H{"success": err == nil, "message": message, "data": families})
+	})
+	r.OPTIONS("/api/v1/families/devices", func(c *gin.Context) { c.String(200, "OK") })
+	r.GET("/api/v1/families/devices", handlerApiV1FamiliesDevices)
 	r.GET("/api/v1/database/:family", func(c *gin.Context) {
 		db, err := database.Open(strings.ToLower(c.Param("family")), true)
 		if err == nil {
@@ -602,6 +635,34 @@ func ping(c *gin.Context) {
 
 func handleTest(c *gin.Context) {
 	c.String(http.StatusOK, "ok")
+}
+
+func handlerApiV1FamiliesDevices(c *gin.Context) {
+	data := make(map[string]interface{})
+
+	err := func(c *gin.Context) (err error) {
+		families,_ := database.GetFamilies()
+		for _, family := range families{
+			d, _err := database.Open(family, true)
+			if _err != nil {
+				err = _err
+				return
+			}
+			defer d.Close()
+			s, _err := d.GetDevices()
+			if _err != nil {
+				err = _err
+				return
+			}
+			data[family] = s
+		}
+
+		c.JSON(http.StatusOK, gin.H{"message": "got devices", "success": true, "data": data})
+		return
+	}(c)
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{"message": err.Error(), "success": false})
+	}
 }
 
 func handlerApiV1Devices(c *gin.Context) {
@@ -1340,8 +1401,8 @@ func sendOutData(p models.SensorData) (analysis models.LocationAnalysis, err err
 		p.GPS.Latitude = gpsData[analysis.Guesses[0].Location].GPS.Latitude
 		p.GPS.Longitude = gpsData[analysis.Guesses[0].Location].GPS.Longitude
 	} else {
-		p.GPS.Latitude = -1
-		p.GPS.Longitude = -1
+		p.GPS.Latitude = -2.00
+		p.GPS.Longitude = -80.00
 	}
 
 	payload := Payload{

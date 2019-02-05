@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"github.com/pkg/errors"
 	"github.com/robfig/go-cache"
+	"github.com/scando1993/ColdChainTrackerServer/main/src/database"
 	"github.com/scando1993/ColdChainTrackerServer/main/src/models"
 	"math/rand"
 	"net"
@@ -81,6 +82,38 @@ func sendToEventHub(data models.RawSensorData){
 	logger.Log.Debugf("Request with data sent to event hub with response: %", resp.StatusCode)
 	logger.Log.Debug(resp)
 	defer resp.Body.Close()
+}
+
+func stringInSlice(a string, list []string) bool {
+	for _, b := range list {
+		if b == a {
+			return true
+		}
+	}
+	return false
+}
+
+func getDeviceFromFamily(device string) (family string){
+	families,_ := database.GetFamilies()
+	for _, _family := range families{
+		d, _err := database.Open(_family, true)
+		if _err != nil {
+			logger.Log.Warn(_err)
+			return
+		}
+		defer d.Close()
+		s, _err := d.GetDevices()
+		if _err != nil {
+			logger.Log.Warn(_err)
+			return
+		}
+		if stringInSlice(device, s) {
+			family = _family
+			return
+		}
+	}
+
+	return
 }
 
 func bindStringData(rawData string, data *models.RawSensorData) (err error){
@@ -173,6 +206,10 @@ func bindStringData(rawData string, data *models.RawSensorData) (err error){
 	}
 
 	data.Battery = int(b)
+
+	data.RawSensorData = true
+
+	data.Family = getDeviceFromFamily(data.SensorId)
 
 	return
 }
