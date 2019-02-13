@@ -1,12 +1,20 @@
 {{ template "header" . }}
+
+<!-- Load c3.css -->
+<link href="/static/css/c3.css" rel="stylesheet">
+
+<!-- Load d3.js and c3.js -->
+<script src="/static/js/c3.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
 <!-- Left Panel -->
 <!-- Right Panel -->
 <div id="right-panel" class="right-panel">
     <div class="breadcrumbs">
         <div class="col-sm-4">
-            <div class="page-header float-left" >
+            <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Temperature Analysis</h1>
+                    <h1>Temperature analysis</h1>
                 </div>
             </div>
         </div>
@@ -40,8 +48,6 @@
                 </div>
             </div>
         {{ end }}
-
-
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-body">
@@ -50,31 +56,54 @@
                             <h4 class="card-title mb-0">About</h4>
                         </div>
                         <div class="col-sm-12">
-                            <p>This map shows location of each individual device in realtime. If there are no devices shown, then there is currently no movement in the devices.</p>
+                            <p>These graphs show the raw RSSI value (X-axis) and the probability (Y-axis) for each location for the top 10 most important access points. The most important access points have the most variance across the location set, thus are the most distinguishing.</p>
+                            <p>If you see two graphs with very similar patterns, then likely those two locations are too close together to be able to distinguish them correctly.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <h4 class="card-title mb-0">Current locations</h4>
+        {{ range $i, $n := .Locations }}
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="card-title mb-0 text-center text-capitalize">{{$n.Location}}</h4>
+                            </div>
+                            <div class="col-sm-12">
+                                <div id="chartjs-{{$i}}" >
+                                    <script type="text/javascript">
+                                        console.log("js")
+                                        var chart = c3.generate({
+                                            bindto: '#chartjs-{{$i}}',
+                                            size: {
+                                                height: 300
+                                            },
+                                            data: {
+                                                xs: {{$n.Xs}},
+                                                xFormat: '%Y-%m-%dT%H:%M:%S',
+                                                json: {{$n.Data}}
+                                            },
+                                            axis: {
+                                                x: {
+                                                    type: 'timeseries',
+                                                    tick: {
+                                                        rotate: 90,
+                                                        format: '%Y-%m-%dT%H:%M:%S',
+                                                        multiline: false
+                                                    },
+                                                }
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="content mt-3">
-                        <div id="map" style="height:500px;"></div>
                     </div>
                 </div>
             </div>
-        </div>
-
-
+        {{end}}
     </div>
     <!-- .content -->
 </div>
@@ -92,7 +121,10 @@
 <script src="/static/js/lib/data-table/buttons.colVis.min.js"></script>
 <script src="/static/js/lib/data-table/datatables-init.js"></script>
 <script src="/static/js/jquery.autocomplete.js"></script>
+
 <script type="text/javascript">
+
+
     function toTitleCase(str)
     {
         return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
@@ -236,12 +268,6 @@
 
 
     })(jQuery);
-</script>
-
-<script>
-
-
-
 
     function update_position() {
         $.getJSON('/api/v1/by_location/{{.Family}}', function(data) {

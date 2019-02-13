@@ -79,6 +79,29 @@ type RawSensorData struct {
 	RawSensorData	bool		`json:"rawSensorData"`
 }
 
+type WebApiData struct {
+	LocationName	string				`json:"locationName"`
+	Devices 		[]WebApiDataSensor	`json:"Devices"`
+}
+
+type WebApiDataSensor struct {
+	DeviceName		string						`json:"deviceName"`
+	Trackings 		[]WebApiDataSensorTracking	`json:"trackings"`
+}
+
+type WebApiDataSensorTracking struct {
+	Dtm				string				`json:"dtm"`
+	Temperature		int16				`json:"temperature"`
+}
+
+type TemperatureChart struct{
+	Location	string							`json:"location"`
+	Data		map[string][]string				`json:"data"`
+	Xs			map[string]string				`json:"xs"`
+}
+
+
+
 // Convert will convert a FINDFingerprint into the new type of data,
 // for backwards compatibility with FIND.
 func (f FINDFingerprint) Convert() (d SensorData) {
