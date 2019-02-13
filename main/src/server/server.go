@@ -63,7 +63,7 @@ func Run() (err error) {
 		db, err := database.Open(family, true)
 		if err == nil {
 			db.Close()
-			c.Redirect(http.StatusMovedPermanently, "/view/dashboard/"+family)
+			c.Redirect(http.StatusMovedPermanently, "/view/dashboard/" + family)
 		} else {
 			c.HTML(http.StatusOK, "login.tmpl", gin.H{
 				// "Message": template.HTML(fmt.Sprintf(`Family '%s' does not exist. Follow <a href="https://www.internalpositioning.com/doc/tracking_your_phone.md" target="_blank">these instructions</a> to get started.`, family)),
@@ -79,20 +79,93 @@ func Run() (err error) {
 			c.String(200, err.Error())
 			return
 		}
-		locationList, err := d.GetLocations()
+
+		locationList, err := api.GetDataGroupByFamilyFromWebApp(family)
+
+		data := make([]models.TemperatureChart,0)
+
+		for _, location := range locationList{
+			var _data models.TemperatureChart
+			_data.Location = location.LocationName
+			_data.Xs = make(map[string]string)
+			_data.Data = make(map[string][]string)
+			for _, sensor := range location.Devices{
+				logger.Log.Debug(sensor)
+				_data.Xs[sensor.DeviceName] = sensor.DeviceName + "X"
+				_data.Data[sensor.DeviceName + "X"] = make([]string, 0)
+				_data.Data[sensor.DeviceName] = make([]string, 0)
+				for _,tracking := range sensor.Trackings{
+
+					_data.Data[sensor.DeviceName + "X"] = append(_data.Data[sensor.DeviceName + "X"], tracking.Dtm)
+					_data.Data[sensor.DeviceName] = append(_data.Data[sensor.DeviceName], strconv.Itoa(int(tracking.Temperature)))
+				}
+			}
+
+			data = append(data, _data)
+		}
+
+		logger.Log.Debug(locationList)
 		d.Close()
 		if err != nil {
 			logger.Log.Warn("could not get locations")
 			c.String(200, err.Error())
 			return
 		}
+		logger.Log.Debug(data)
 		c.HTML(http.StatusOK, "temperature.tmpl", gin.H{
 			"TemperatureAnalysis": true,
 			"Family":           family,
-			"Locations":        locationList,
+			"Locations":        data,
 			"FamilyJS":         template.JS(family),
 		})
 	})
+	//r.GET("/view/reports/:family", func(c *gin.Context) {
+	//	family := strings.ToLower(c.Param("family"))
+	//	d, err := database.Open(family, true)
+	//	if err != nil {
+	//		c.String(200, err.Error())
+	//		return
+	//	}
+	//
+	//	locationList, err := api.GetDataGroupByFamilyFromWebApp(family)
+	//
+	//	data := make([]models.TemperatureChart,0)
+	//
+	//	for _, location := range locationList{
+	//		var _data models.TemperatureChart
+	//		_data.Location = location.LocationName
+	//		_data.Xs = make(map[string]string)
+	//		_data.Data = make(map[string][]string)
+	//		for _, sensor := range location.Devices{
+	//			logger.Log.Debug(sensor)
+	//			_data.Xs[sensor.DeviceName] = sensor.DeviceName + "X"
+	//			_data.Data[sensor.DeviceName + "X"] = make([]string, 0)
+	//			_data.Data[sensor.DeviceName] = make([]string, 0)
+	//			for _,tracking := range sensor.Trackings{
+	//
+	//				_data.Data[sensor.DeviceName + "X"] = append(_data.Data[sensor.DeviceName + "X"], tracking.Dtm)
+	//				_data.Data[sensor.DeviceName] = append(_data.Data[sensor.DeviceName], strconv.Itoa(int(tracking.Temperature)))
+	//			}
+	//		}
+	//
+	//		data = append(data, _data)
+	//	}
+	//
+	//	logger.Log.Debug(locationList)
+	//	d.Close()
+	//	if err != nil {
+	//		logger.Log.Warn("could not get locations")
+	//		c.String(200, err.Error())
+	//		return
+	//	}
+	//	logger.Log.Debug(data)
+	//	c.HTML(http.StatusOK, "temperature.tmpl", gin.H{
+	//		"Reports": 			true,
+	//		"Family":           family,
+	//		"Locations":        data,
+	//		"FamilyJS":         template.JS(family),
+	//	})
+	//})
 	r.GET("/view/analysis/:family", func(c *gin.Context) {
 		family := strings.ToLower(c.Param("family"))
 		d, err := database.Open(family, true)

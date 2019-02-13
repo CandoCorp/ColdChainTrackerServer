@@ -495,6 +495,7 @@ func (d *Database) GetSensorFromGreaterTime(timeBlockInMilliseconds int64) (sens
 	}
 	minimumTimestamp := latestTime - timeBlockInMilliseconds
 	logger.Log.Debugf("using minimum timestamp of %d", minimumTimestamp)
+
 	sensors, err = d.GetAllFromPreparedQuery("SELECT * FROM sensors WHERE timestamp > ? GROUP BY deviceid ORDER BY timestamp DESC", minimumTimestamp)
 	return
 }
@@ -1112,6 +1113,7 @@ func (d *Database) GetAllFromPreparedQuery(query string, args ...interface{}) (s
 	// logger.Log.Debugf("%s: %s", query, time.Since(startQuery))
 	// startQuery = time.Now()
 	defer rows.Close()
+	//logger.Log.Debug(rows)
 	s, err = d.getRows(rows)
 	if err != nil {
 		err = errors.Wrap(err, query)
