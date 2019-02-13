@@ -13,7 +13,7 @@
     <title>ColdChainTracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
+    {{/*<link rel="apple-touch-icon" href="apple-icon.png">*/}}
     <link rel="icon" type="image/png" href="/static/img/favicon-32x32.png" sizes="32x32">
     <link rel="stylesheet" href="/static/css/normalize.css">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
@@ -135,6 +135,12 @@
                         <a href="/view/analysis/{{.Family}}">
                             <i class="menu-icon fa fa-chart-bar fa-lg"></i>Location analysis </a>
                     </li>
+
+                    {{/*<li {{if .Reports}}class="active"{{end}}>*/}}
+                        {{/*<a href="/view/analysis/{{.Family}}">*/}}
+                            {{/*<i class="menu-icon fa fa-chart-bar fa-lg"></i>Reports</a>*/}}
+                    {{/*</li>*/}}
+
 
                     <!--
                     <li>
