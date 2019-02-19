@@ -10,9 +10,9 @@ production: clean
 	export LC_ALL=C.UTF-8 && \
 	export LANG=C.UTF-8 && \
 	export FLASK_APP=server.py && \
-	export FLASK_DEBUG=0 && \
+	export FLASK_DEBUG=1 && \
 	cd src && \
-	flask run --port 8002
+	flask run --debugger --port 8002
 
 production2: clean
 	export LC_ALL=C.UTF-8 && \
