@@ -136,12 +136,14 @@ var date  = new Date();
 
     var map = new L.Map('map', {
       'center': [{{.Center}}],
-      'zoom': 15,
+      'zoom': 7,
       'layers': [tileLayer]
     });
 
-    var marker = {}
+    var marker = {};
 
+    // var markers = L.markerClusterGroup({ chunkedLoading: true, chunkProgress: updateProgressBar});
+    var markerList = [];
 
     
     function iterateClock() {
@@ -166,82 +168,78 @@ var date  = new Date();
         "hideEasing": "linear",
         "showMethod": "fadeIn",
         "hideMethod": "fadeOut"
-    }
+    };
 
+    String.prototype.hashCode = function() {
+      var hash = 0, i, chr;
+      if (this.length === 0) return hash;
+      for (i = 0; i < this.length; i++) {
+        chr   = this.charCodeAt(i);
+        hash  = ((hash << 5) - hash) + chr;
+        hash |= 0; // Convert to 32bit integer
+      }
+      return hash;
+    };
 
-String.prototype.hashCode = function() {
-  var hash = 0, i, chr;
-  if (this.length === 0) return hash;
-  for (i = 0; i < this.length; i++) {
-    chr   = this.charCodeAt(i);
-    hash  = ((hash << 5) - hash) + chr;
-    hash |= 0; // Convert to 32bit integer
-  }
-  return hash;
-};
+    var socket;
 
-var socket;
+    const socketMessageListener = (event) => {
+        data = JSON.parse(event.data);
+        console.log(data);
+        var device = data['sensors']['d']
+        var hashedMove = device.hashCode()/40000000000000;
+        console.log(hashedMove);
+        var seenDate = new Date(0);
+        seenDate.setUTCMilliseconds(data.sensors.t);
+        var popupContent =  "Location: " + data['location'] +
+                            "<br>Probability: " +
+                            Math.round(data['guesses'][0]['probability']*100) + "%"
+                            + "<br>Temperature: " + data['temperature']
+                            + "<br>Seen at " + seenDate;
+        var toolTipContent = device;
+        if (!marker.hasOwnProperty(device)) {
+            marker[device] = L.marker([
+                data['sensors']['gps']['lat'] + hashedMove,
+                data['sensors']['gps']['lon'] + hashedMove
+            ])
+            .bindPopup(popupContent)
+            .bindTooltip(toolTipContent,
+                {permanent: true,
+                direction: 'top'
+            })
+            .addTo(map);
+        } else {
+            marker[device]
+                .setPopupContent(popupContent)
+                .setTooltipContent(toolTipContent)
+                .setLatLng(new L.LatLng(data['sensors']['gps']['lat']+hashedMove,hashedMove+data['sensors']['gps']['lon']))
+                .update();
+        }
+    };
 
-const socketMessageListener = (event) => {
-    data = JSON.parse(event.data);
-    console.log(data);
-    var device = data['sensors']['d']
-    var hashedMove = device.hashCode()/40000000000000;
-    console.log(hashedMove);
-    var seenDate = new Date(0);
-    seenDate.setUTCMilliseconds(data.sensors.t);
-    var popupContent =  "Location: " + data['location'] +
-                        "<br>Probability: " +
-                        Math.round(data['guesses'][0]['probability']*100) + "%"
-                        + "<br>Temperature: " + data['temperature']
-                        + "<br>Seen at " + seenDate;
-    var toolTipContent = device;
-    if (!marker.hasOwnProperty(device)) {
-        marker[device] = L.marker([
-            data['sensors']['gps']['lat'] + hashedMove,
-            data['sensors']['gps']['lon'] + hashedMove
-        ])
-        .bindPopup(popupContent)
-        .bindTooltip(toolTipContent,
-            {permanent: true, 
-            direction: 'top'
-        })
-        .addTo(map);
-    } else {
-        marker[device]
-            .setPopupContent(popupContent)
-            .setTooltipContent(toolTipContent)
-            .setLatLng(new L.LatLng(data['sensors']['gps']['lat']+hashedMove,hashedMove+data['sensors']['gps']['lon']))
-            .update();
-    }
-};
+    const socketOpenListener = (event) => {
+      console.log('Connected');
+      socket.send('hello');
+    };
 
-const socketOpenListener = (event) => {
-  console.log('Connected');
-  socket.send('hello');
-};
+    const socketCloseListener = (event) => {
+      if (socket) {
+        console.error('Disconnected.');
+      }
+      var url = window.origin.replace("http", "ws") + '/ws?device=all&family={{.FamilyJS}}';
+      socket = new WebSocket(url);
+      socket.addEventListener('open', socketOpenListener);
+      socket.addEventListener('message', socketMessageListener);
+      socket.addEventListener('close', socketCloseListener);
+    };
 
-const socketCloseListener = (event) => {
-  if (socket) {
-    console.error('Disconnected.');
-  }
-  var url = window.origin.replace("http", "ws") + '/ws?device=all&family={{.FamilyJS}}';
-  socket = new WebSocket(url);
-  socket.addEventListener('open', socketOpenListener);
-  socket.addEventListener('message', socketMessageListener);
-  socket.addEventListener('close', socketCloseListener);
-};
-
-socketCloseListener();
+    socketCloseListener();
 
 
 })(jQuery);
 </script>
 
 <script>
-
-
-
 
 function update_position() {
     $.getJSON('/api/v1/by_location/{{.Family}}', function(data) {
@@ -292,6 +290,8 @@ function update_position() {
         setTimeout(update_position, 1000);
     });
 }
+
+// setInterval(update_position, 1000);
 
 </script>
 

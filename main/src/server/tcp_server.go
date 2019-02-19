@@ -3,7 +3,12 @@ package server
 import (
 	"bufio"
 	"bytes"
+	"crypto/hmac"
+	"crypto/sha256"
+	"encoding/base64"
+	"encoding/hex"
 	"encoding/json"
+	"fmt"
 	"github.com/pkg/errors"
 	"github.com/robfig/go-cache"
 	"github.com/scando1993/ColdChainTrackerServer/main/src/database"
@@ -11,6 +16,7 @@ import (
 	"math/rand"
 	"net"
 	"net/http"
+	"net/url"
 
 	"strconv"
 	"strings"
@@ -18,10 +24,12 @@ import (
 )
 
 var TCP_Port = "65432"
+var EVENT_HUB_NAME = "iot-button"
 var EVENT_HUB_HOST = "iot-button.servicebus.windows.net"
-var EVENT_HUB_PORT = ""
+var EVENT_HUB_PRIMARY_KEY_NAME = "WifiManageSharedAccessKey"
+var EVENT_HUB_PRIMARY_KEY  = "k/pPlayZW9uE6rFpWvPUj3udfXcdGPEddo+X1nTimw4="
 var EVENT_HUB_ROUTE = "coldchaintrack/messages"
-var EVENT_HUB_AUTHORIZATION string = "SharedAccessSignature sr=https%3a%2f%2fiot-button.servicebus.windows.net%2fcoldchaintrack%2fmessages&sig=T21GiLWj5psgBT0sURW%2b15c3%2baVLm%2bsuEZoErhBGTbM%3d&se=1549555760&skn=RootManageSharedAccessKey"
+var EVENT_HUB_AUTHORIZATION string
 var CONFIG_DATA bool = true
 
 const MIN = 1
@@ -59,6 +67,32 @@ func createHTTPClient() *http.Client {
 	return client
 }
 
+func getAuthToken(sb_name, eh_name, sas_name, sas_value string) (key string){
+	//
+	//Returns an authorization token dictionary
+	//for making calls to Event Hubs REST API.
+	//
+
+	uri := url.QueryEscape(fmt.Sprint("https://%s.servicebus.windows.net/%s",
+		sb_name, eh_name))
+	sas := sas_value
+	//expiry := string(int(time.Now().Unix() + 10000))
+	expiry := strconv.FormatInt(time.Now().Unix() + 10000,10)
+	string_to_sign := uri + "\n" + expiry
+	h := hmac.New(sha256.New, []byte(sas))
+	h.Write([]byte(string_to_sign))
+	signed_hmac_sha256 := hex.EncodeToString(h.Sum(nil))
+
+	signature := url.QueryEscape(base64.StdEncoding.EncodeToString([]byte(signed_hmac_sha256)))
+	return  fmt.Sprint("sb_name: %s, eh_name %s, token: \"SharedAccessSignature sr=%s&sig=%s&se=%sskn=%s\"",
+		sb_name,
+		eh_name,
+		uri,
+		signature,
+		expiry,
+		sas_name)
+}
+
 func sendToEventHub(data models.RawSensorData){
 	url := "https://" + EVENT_HUB_HOST +  "/" + EVENT_HUB_ROUTE
 	logger.Log.Debug(url)
@@ -70,6 +104,11 @@ func sendToEventHub(data models.RawSensorData){
 	}
 	req, err := http.NewRequest("POST", url, bytes.NewBuffer(bPayload))
 	req.Header.Set("Content-Type", "application/json")
+	EVENT_HUB_AUTHORIZATION = getAuthToken(
+		EVENT_HUB_NAME,
+		EVENT_HUB_ROUTE,
+		EVENT_HUB_PRIMARY_KEY_NAME,
+		EVENT_HUB_PRIMARY_KEY )
 	req.Header.Set("Authorization", EVENT_HUB_AUTHORIZATION)
 	req.Header.Set("Host", EVENT_HUB_HOST)
 	logger.Log.Debug(req)

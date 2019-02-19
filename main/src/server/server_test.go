@@ -15,6 +15,7 @@ import (
 func init() {
 	gin.SetMode(gin.ReleaseMode)
 }
+
 func TestPing(t *testing.T) {
 	router := gin.New()
 	router.GET("/ping", ping)

@@ -242,6 +242,8 @@ func Run() (err error) {
 				}
 				avgLat += latitude
 				avgLon += longitude
+				logger.Log.Debugf("%2.7f, %2.7f",avgLat,avgLon)
+				logger.Log.Debugf("%2.7f, %2.7f",latitude,longitude)
 				data[i].Latitude = template.JS(fmt.Sprintf("%2.10f", latitude))
 				data[i].Longitude = template.JS(fmt.Sprintf("%2.10f", longitude))
 				i++
@@ -249,6 +251,9 @@ func Run() (err error) {
 
 			avgLat = avgLat / float64(len(gpsData))
 			avgLon = avgLon / float64(len(gpsData))
+			logger.Log.Debug(len(gpsData))
+			logger.Log.Debug(i)
+			logger.Log.Debugf("%2.7f, %2.7f",avgLat,avgLon)
 
 			c.HTML(200, "map2.tmpl", gin.H{
 				"UserMap":  true,

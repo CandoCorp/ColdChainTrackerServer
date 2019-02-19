@@ -67,6 +67,7 @@
                     </div>
                     
                     <div class="content mt-3">
+                        {{/*<div id="progress"><div id="progress-bar"></div></div>*/}}
                         <div id="map" style="height:500px;"></div>
                     </div>
                 </div>
@@ -91,6 +92,11 @@
 <script src="/static/js/lib/data-table/buttons.colVis.min.js"></script>
 <script src="/static/js/lib/data-table/datatables-init.js"></script>
 <script src="/static/js/jquery.autocomplete.js"></script>
+{{/*<link rel="stylesheet" href="/static/css/MarkerCluster.css" />*/}}
+{{/*<link rel="stylesheet" href="/static/css/MarkerCluster.Default.css" />*/}}
+{{/*<script src="/static/js/leaflet.markercluster-src.js"></script>*/}}
+
+
 <script type="text/javascript">
 function toTitleCase(str)
 {
@@ -135,7 +141,7 @@ function timeSince(date) {
 
     toastr.options = {
         "closeButton": false,
-        "debug": false,
+        "debug": true,
         "newestOnTop": false,
         "progressBar": false,
         "positionClass": "toast-top-right",
@@ -157,70 +163,134 @@ function timeSince(date) {
 
 <script>
     var tileLayer = new L.TileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',{
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-  maxZoom: 22,
-   maxNativeZoom: 20
-});
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+        maxZoom: 22,
+        maxNativeZoom: 20
+    });
 
-var map = new L.Map('map', {
-  'center': [{{.Center}}],
-  'zoom': 20,
-  'layers': [tileLayer]
-});
+    var map = new L.Map('map', {
+      'center': getLocation(),
+      'zoom': 7,
+      'layers': [tileLayer]
+    });
 
-var marker = {}
+    function getLocation() {
+        if (navigator.geolocation && window.isSecureContext !== false) {
+            return navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            console.log("Geolocation is not supported by this browser.");
+        }
+        return [{{.Center}}]
+    }
+    function showPosition(position) {
+        return [position.coords.latitude, position.coords.longitude];
+    }
 
-function update_position() {
-    $.getJSON('/api/v1/by_location/{{.Family}}', function(data) {
-        console.log(data['locations'].length);
-        var updatedMarkers = {}
-        for (i = 0; i < data['locations'].length; i++) {
-            console.log(data['locations'][i])
-            console.log(data);
-            var locData = data['locations'][i]['location'];
-            var devices = []
-            for (j = 0; j < data['locations'][i]['devices'].length; j++) {
-                devices.push(data['locations'][i]['devices'][j]['device']);
-            }
-            var popupContent = devices.join(", ");
-            var toolTipContent = locData + ': ' + data['locations'][i]['devices'].length + " devices";
-
-            if (!marker.hasOwnProperty(locData)) {
-                marker[locData] = L.marker([
-                    data['locations'][i]['gps']['lat'],
-                    data['locations'][i]['gps']['lon']
-                ])
-                .bindPopup(popupContent)
-                .bindTooltip(toolTipContent,
-                    {permanent: true, 
-                    direction: 'top'
-                })
-                .addTo(map);
-            } else {
-                marker[locData]
-                    .setPopupContent(popupContent)
-                    .setTooltipContent(toolTipContent)
-                    .update();
-            }
-            updatedMarkers[locData] = true;
-        } 
-
-        // remove markers for which there were no updates (no devices at them)
-        for (key in marker) {
-            console.log(marker[key]);
-            if (updatedMarkers.hasOwnProperty(key)) {
-                continue
-            }
-            // delete marker
-            map.removeLayer(marker[key]);
-            delete marker[key];
+    function updateProgressBar(processed, total, elapsed, layersArray) {
+        if (elapsed > 1000) {
+            // if it takes more than a second to load, display the progress bar:
+            progress.style.display = 'block';
+            progressBar.style.width = Math.round(processed/total*100) + '%';
         }
 
-        setTimeout(update_position, 1000);
-    });
-}
+        if (processed === total) {
+            // all markers processed - hide the progress bar:
+            progress.style.display = 'none';
+        }
+    }
+    var marker = {};
+    // var markers = L.markerClusterGroup({ chunkedLoading: true, chunkProgress: updateProgressBar})
+    var markerList = [];
 
-update_position();
+    function update_position() {
+        // var temperature;
+        // $.getJSON('', function (data) {
+        //
+        // });
+            
+        $.getJSON('/api/v1/by_location/{{.Family}}', function(data) {
+            console.log(data['locations'].length);
+            var updatedMarkers = {};
+            for (i = 0; i < data['locations'].length; i++) {
+                console.log(data['locations'][i]);
+                console.log(data);
+
+                var locData = data['locations'][i]['location'];
+                var devices = [];
+                var localData = data['locations'][i];
+
+                for (j = 0; j < data['locations'][i]['devices'].length; j++) {
+                    devices.push(data['locations'][i]['devices'][j]['device']);
+                }
+
+                var popupContent =  devices.join(", ");
+                var toolTipContent = locData + ': ' + data['locations'][i]['devices'].length + " devices";
+
+                if (marker.locData === undefined) {
+                    if (data['locations'][i]['gps']['lat'] !== undefined) {
+                        marker[locData] = L.marker([
+                            data['locations'][i]['gps']['lat'],
+                            data['locations'][i]['gps']['lon']
+                        ])
+                        .bindPopup(popupContent)
+                        .bindTooltip(toolTipContent,
+                            {permanent: true,
+                                direction: 'top'
+                            })
+                        .addTo(map);
+                    }else {
+                        marker[locData] = L.marker([
+                            -1,
+                            -1
+                        ])
+                        .bindPopup(popupContent)
+                        .bindTooltip(toolTipContent,
+                            {permanent: true,
+                                direction: 'top'
+                            })
+                        .addTo(map);
+                    }
+                    // marker[locData] = L.marker([
+                    //     data['locations'][i]['gps']['lat'],
+                    //     data['locations'][i]['gps']['lon']
+                    // ])
+                    // .bindPopup(popupContent)
+                    // .bindTooltip(toolTipContent,
+                    //     {permanent: true,
+                    //     direction: 'top'
+                    // })
+                    // .addTo(map);
+                    markerList.push(marker[locData])
+                } else {
+                    marker[locData]
+                        .setPopupContent(popupContent)
+                        .setTooltipContent(toolTipContent)
+                        .update();
+                }
+                // updatedMarkers[locData] = true;
+                // markers.addLayers(markerList);
+            }
+
+            // remove markers for which there were no updates (no devices at them)
+            for (key in marker) {
+                console.log(marker[key]);
+                if (updatedMarkers.hasOwnProperty(key)) {
+                    continue
+                }
+                // delete marker
+
+                // markers.removeLayer(maker[key]);
+                map.removeLayer(marker[key]);
+                delete marker[key];
+            }
+
+            // setTimeout(update_position, 1000);
+        });
+    }
+
+        // setInterval(update_position, 1000);
+    update_position();
+
 </script>
 
 {{ template "footer" . }}

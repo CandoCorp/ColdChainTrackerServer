@@ -27,8 +27,8 @@ func GetGPSData(family string) (gpsData map[string]models.SensorData, err error)
 	for _, location := range locations {
 		gpsData[location] = models.SensorData{
 			GPS: models.GPS{
-				Latitude:  -1,
-				Longitude: -1,
+				Latitude:  -2.174739,
+				Longitude: -79.902467,
 			},
 		}
 	}

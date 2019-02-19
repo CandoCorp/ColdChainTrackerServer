@@ -21,7 +21,7 @@ require (
 	github.com/schollz/utils v1.0.0
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/stretchr/objx v0.1.1 // indirect
-	github.com/stretchr/testify v1.3.0 // indirect
+	github.com/stretchr/testify v1.3.0
 	github.com/tdewolff/minify v2.3.6+incompatible // indirect
 	github.com/tdewolff/parse v2.3.4+incompatible // indirect
 	github.com/ugorji/go v1.1.1 // indirect
