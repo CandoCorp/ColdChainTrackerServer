@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4076a575-e60a-4f9d-bb74-f1f417131118" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../ai/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/gps.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/gps.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/server_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/tcp_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/tcp_server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.tmpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/map.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/map.tmpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/map2.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/map2.tmpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/temperature.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temperature.tmpl" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/header.tmpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
+            <state relative-caret-position="330">
+              <caret line="127" selection-start-line="127" selection-end-line="127" />
             </state>
           </provider>
         </entry>
@@ -69,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/templates/map.tmpl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="737">
-              <caret line="251" column="21" lean-forward="true" selection-start-line="251" selection-start-column="21" selection-end-line="251" selection-end-column="21" />
+              <caret line="251" column="21" selection-start-line="251" selection-start-column="21" selection-end-line="251" selection-end-column="21" />
               <folding>
                 <element signature="e#3870#4482#0#HTML" />
                 <element signature="e#0#6#0" expanded="true" />
@@ -80,7 +69,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/temperature.tmpl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1605">
@@ -92,7 +81,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/server.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="634">
+            <state relative-caret-position="8625">
               <caret line="885" column="54" selection-start-line="885" selection-start-column="54" selection-end-line="885" selection-end-column="54" />
               <folding>
                 <element signature="e#16#481#0" expanded="true" />
@@ -108,7 +97,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api/analysis.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
+            <state relative-caret-position="944">
               <caret line="413" column="24" selection-start-line="413" selection-start-column="24" selection-end-line="413" selection-end-column="24" />
             </state>
           </provider>
@@ -687,7 +676,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/server.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
+        <state relative-caret-position="8625">
           <caret line="885" column="54" selection-start-line="885" selection-start-column="54" selection-end-line="885" selection-end-column="54" />
           <folding>
             <element signature="e#16#481#0" expanded="true" />
@@ -701,22 +690,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api/analysis.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
+        <state relative-caret-position="944">
           <caret line="413" column="24" selection-start-line="413" selection-start-column="24" selection-end-line="413" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/header.tmpl">
+    <entry file="file://$PROJECT_DIR$/templates/temperature.tmpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
+        <state relative-caret-position="1605">
+          <caret line="107" column="26" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/map.tmpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="737">
-          <caret line="251" column="21" lean-forward="true" selection-start-line="251" selection-start-column="21" selection-end-line="251" selection-end-column="21" />
+          <caret line="251" column="21" selection-start-line="251" selection-start-column="21" selection-end-line="251" selection-end-column="21" />
           <folding>
             <element signature="e#3870#4482#0#HTML" />
             <element signature="e#0#6#0" expanded="true" />
@@ -726,10 +715,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/temperature.tmpl">
+    <entry file="file://$PROJECT_DIR$/templates/header.tmpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="107" column="26" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
+        <state relative-caret-position="330">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
         </state>
       </provider>
     </entry>
