@@ -480,9 +480,9 @@
 
 
         var date = new Date(0);
-        date.setUTCMilliseconds(data.sensors.t);
+        date.setUTCMilliseconds(data.sensors.t * 1000);
         console.log(date);
-        $("#lastseen-" + idName).text(date.toUTCString().replace(" GMT-5", ""));
+        $("#lastseen-" + idName).text(date.toString().split(" G")[0]);
         var entered = " entered ";
         if (lastLocation == data.guesses[0].location) {
             entered = " still at "
