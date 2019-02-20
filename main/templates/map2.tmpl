@@ -186,16 +186,23 @@ var date  = new Date();
     const socketMessageListener = (event) => {
         data = JSON.parse(event.data);
         console.log(data);
-        var device = data['sensors']['d']
+        var device = data['sensors']['d'];
+        var family = data['sensors']['f'];
         var hashedMove = device.hashCode()/40000000000000;
         console.log(hashedMove);
         var seenDate = new Date(0);
-        seenDate.setUTCMilliseconds(data.sensors.t);
+        seenDate.setUTCMilliseconds(data.sensors.t * 1000);
+        var url = "http://104.209.223.100/chaintrack/auth/api/tracking/lastTemperature?name="
+            + device + "&family=" + family;
+        var temperature = 0;
+        $.get(url, function (dataAjax) {
+            temperature = dataAjax;
+        });
         var popupContent =  "Location: " + data['location'] +
                             "<br>Probability: " +
                             Math.round(data['guesses'][0]['probability']*100) + "%"
-                            + "<br>Temperature: " + data['temperature']
-                            + "<br>Seen at " + seenDate;
+                            + "<br>Temperature: " + temperature
+                            + "<br>Seen at " + seenDate.toString().split(" G")[0];
         var toolTipContent = device;
         if (!marker.hasOwnProperty(device)) {
             marker[device] = L.marker([
