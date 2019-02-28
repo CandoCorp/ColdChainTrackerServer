@@ -4,8 +4,10 @@ import (
 	"bytes"
 	"encoding/json"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"path"
+	"regexp"
 
 	"github.com/mr-tron/base58/base58"
 )
@@ -13,7 +15,12 @@ import (
 var MainPort string
 
 func GetImage(family, location string) (img []byte, err error) {
-	imagePath := path.Join(DataFolder, "images", base58.FastBase58Encoding([]byte(family)), location+".png")
+	reg, err := regexp.Compile("[^a-zA-Z0-9]+")
+	if err != nil {
+		log.Fatal(err)
+	}
+	_location := reg.ReplaceAllString(location, "")
+	imagePath := path.Join(DataFolder, "images", base58.FastBase58Encoding([]byte(family)), _location + ".png")
 	logger.Log.Debugf("loading %s", imagePath)
 	img, err = ioutil.ReadFile(imagePath)
 	return
