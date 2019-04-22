@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="4076a575-e60a-4f9d-bb74-f1f417131118" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../ai/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/src/learn.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/src/learn.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ai/src/plot_locations.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/src/plot_locations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai/src/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ai/src/server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/location_images.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/location_images.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,20 +38,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/map2.tmpl">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/server/server.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2940">
-              <caret line="196" column="27" selection-start-line="196" selection-start-column="27" selection-end-line="196" selection-end-column="27" />
+            <state relative-caret-position="170">
+              <caret line="662" column="42" lean-forward="true" selection-start-line="662" selection-start-column="42" selection-end-line="662" selection-end-column="42" />
+              <folding>
+                <element signature="e#5117#5860#0" />
+                <element signature="e#5935#6229#0" />
+                <element signature="e#6293#6545#0" />
+                <element signature="e#6597#8446#0" />
+                <element signature="e#8497#9855#0" />
+                <element signature="e#9906#11153#0" />
+                <element signature="e#11210#18086#0" />
+                <element signature="e#18137#18403#0" />
+                <element signature="e#18610#18891#0" />
+                <element signature="e#18945#19349#0" />
+                <element signature="e#19410#19700#0" />
+                <element signature="e#19771#20160#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/header.tmpl">
+        <entry file="file://$PROJECT_DIR$/templates/analysis.tmpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1785">
-              <caret line="119" column="64" selection-start-line="119" selection-start-column="64" selection-end-line="119" selection-end-column="64" />
+            <state relative-caret-position="930">
+              <caret line="62" column="73" selection-start-line="62" selection-start-column="73" selection-end-line="62" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -55,49 +73,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/dashboard.tmpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7260">
-              <caret line="484" column="68" selection-start-line="484" selection-start-column="42" selection-end-line="484" selection-end-column="68" />
+            <state relative-caret-position="4020">
+              <caret line="268" column="40" selection-start-line="268" selection-start-column="40" selection-end-line="268" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/map.tmpl">
+        <entry file="file://$PROJECT_DIR$/src/api/sensorMeasurements.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4260">
-              <caret line="284" column="13" selection-start-line="273" selection-start-column="12" selection-end-line="284" selection-end-column="13" />
+            <state relative-caret-position="255">
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/server.go">
+        <entry file="file://$PROJECT_DIR$/src/api/analysis.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5374">
-              <caret line="191" column="28" selection-start-line="191" selection-start-column="28" selection-end-line="191" selection-end-column="28" />
-              <folding>
-                <element signature="e#16#481#0" expanded="true" />
-                <element signature="e#2120#3512#0" />
-                <element signature="n#!!block;n#parseRollingData#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/server/tcp_server.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="42" column="27" lean-forward="true" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/location_images.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            <state relative-caret-position="780">
+              <caret line="52" column="52" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -105,8 +100,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api/calibration.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5670">
-              <caret line="396" column="9" selection-start-line="396" selection-start-column="9" selection-end-line="396" selection-end-column="9" />
+            <state relative-caret-position="5280">
+              <caret line="370" column="5" selection-start-line="370" selection-start-column="5" selection-end-line="370" selection-end-column="5" />
               <folding>
                 <element signature="n#!!block;n#average#0" />
                 <element signature="n#!!block;n#dumpSensorsToCSV#0" />
@@ -123,6 +118,15 @@
               <folding>
                 <element signature="e#16#125#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api/location_images.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -181,21 +185,22 @@
         <option value="$PROJECT_DIR$/src/server/tcp_server.go" />
         <option value="$PROJECT_DIR$/src/server/tcp_server_test.go" />
         <option value="$PROJECT_DIR$/src/api/gps.go" />
-        <option value="$PROJECT_DIR$/src/server/server.go" />
         <option value="$PROJECT_DIR$/templates/map.tmpl" />
-        <option value="$PROJECT_DIR$/templates/header.tmpl" />
         <option value="$PROJECT_DIR$/templates/gps.tmpl" />
-        <option value="$PROJECT_DIR$/templates/dashboard.tmpl" />
         <option value="$PROJECT_DIR$/templates/map2.tmpl" />
+        <option value="$PROJECT_DIR$/templates/dashboard.tmpl" />
+        <option value="$PROJECT_DIR$/templates/header.tmpl" />
+        <option value="$PROJECT_DIR$/src/api/calibration.go" />
         <option value="$PROJECT_DIR$/src/api/location_images.go" />
+        <option value="$PROJECT_DIR$/src/server/server.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="47" />
-    <option name="y" value="25" />
-    <option name="width" value="1319" />
-    <option name="height" value="743" />
+    <option name="x" value="173" />
+    <option name="y" value="282" />
+    <option name="width" value="758" />
+    <option name="height" value="741" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -219,13 +224,7 @@
               <item name="main" type="b2602c69:ProjectViewProjectNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="main" type="b2602c69:ProjectViewProjectNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="main" type="b2602c69:ProjectViewProjectNode" />
@@ -304,15 +303,15 @@
     </recent_temporary>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="-2" width="768" height="1368" extended-state="7" />
+    <frame x="47" y="25" width="1319" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.3739612" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.37391987" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32768363" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32736155" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -320,7 +319,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.21630347" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.534202" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -513,13 +512,6 @@
     <entry file="file://$PROJECT_DIR$/templates/reports.tmpl">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/sensorMeasurements.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1935">
-          <caret line="135" column="40" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -588,13 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/analysis.tmpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="61" column="37" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/tcp_server_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -626,20 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/analysis.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="944">
-          <caret line="413" column="24" selection-start-line="413" selection-start-column="24" selection-end-line="413" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/temperature.tmpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="107" column="26" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/database/db.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10275">
@@ -659,15 +630,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/header.tmpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="119" column="64" selection-start-line="119" selection-start-column="64" selection-end-line="119" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboard.tmpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7260">
-          <caret line="484" column="68" selection-start-line="484" selection-start-column="42" selection-end-line="484" selection-end-column="68" />
+        <state relative-caret-position="2040">
+          <caret line="136" column="25" selection-start-line="136" selection-start-column="25" selection-end-line="136" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -678,17 +642,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/location_images.go">
+    <entry file="file://$PROJECT_DIR$/templates/temperature.tmpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        <state relative-caret-position="1845">
+          <caret line="123" column="19" lean-forward="true" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/tcp_server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="662" column="42" lean-forward="true" selection-start-line="662" selection-start-column="42" selection-end-line="662" selection-end-column="42" />
+          <folding>
+            <element signature="e#5117#5860#0" />
+            <element signature="e#5935#6229#0" />
+            <element signature="e#6293#6545#0" />
+            <element signature="e#6597#8446#0" />
+            <element signature="e#8497#9855#0" />
+            <element signature="e#9906#11153#0" />
+            <element signature="e#11210#18086#0" />
+            <element signature="e#18137#18403#0" />
+            <element signature="e#18610#18891#0" />
+            <element signature="e#18945#19349#0" />
+            <element signature="e#19410#19700#0" />
+            <element signature="e#19771#20160#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/analysis.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="62" column="73" selection-start-line="62" selection-start-column="73" selection-end-line="62" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4020">
+          <caret line="268" column="40" selection-start-line="268" selection-start-column="40" selection-end-line="268" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/sensorMeasurements.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/analysis.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="52" column="52" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api/calibration.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5670">
-          <caret line="396" column="9" selection-start-line="396" selection-start-column="9" selection-end-line="396" selection-end-column="9" />
+        <state relative-caret-position="5280">
+          <caret line="370" column="5" selection-start-line="370" selection-start-column="5" selection-end-line="370" selection-end-column="5" />
           <folding>
             <element signature="n#!!block;n#average#0" />
             <element signature="n#!!block;n#dumpSensorsToCSV#0" />
@@ -706,29 +726,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/location_images.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/gps.tmpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/server.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5374">
-          <caret line="191" column="28" selection-start-line="191" selection-start-column="28" selection-end-line="191" selection-end-column="28" />
-          <folding>
-            <element signature="e#16#481#0" expanded="true" />
-            <element signature="e#2120#3512#0" />
-            <element signature="n#!!block;n#parseRollingData#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/tcp_server.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="42" column="27" lean-forward="true" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
         </state>
       </provider>
     </entry>

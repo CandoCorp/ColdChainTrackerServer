@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+	"net/url"
 	"os"
 	"strconv"
 	"strings"
@@ -180,10 +181,17 @@ func Run() (err error) {
 			c.String(200, err.Error())
 			return
 		}
+		locationListQuery := make([]string, len(locationList))
+
+		for i:= 0; i < len(locationList); i++ {
+			locationList[i] = strings.Replace(locationList[i],"/", "_", -1)
+			locationListQuery[i] = url.QueryEscape(locationList[i])
+		}
+
 		c.HTML(http.StatusOK, "analysis.tmpl", gin.H{
 			"LocationAnalysis": true,
 			"Family":           family,
-			"Locations":        locationList,
+			"Locations":        locationListQuery,
 			"FamilyJS":         template.JS(family),
 		})
 	})

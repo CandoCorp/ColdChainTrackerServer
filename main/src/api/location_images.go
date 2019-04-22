@@ -3,24 +3,22 @@ package api
 import (
 	"bytes"
 	"encoding/json"
+	"github.com/mr-tron/base58/base58"
 	"io/ioutil"
-	"log"
 	"net/http"
 	"path"
-	"regexp"
-
-	"github.com/mr-tron/base58/base58"
 )
 
 var MainPort string
 
 func GetImage(family, location string) (img []byte, err error) {
-	reg, err := regexp.Compile("[^a-zA-Z0-9]+")
-	if err != nil {
-		log.Fatal(err)
-	}
-	_location := reg.ReplaceAllString(location, "")
-	imagePath := path.Join(DataFolder, "images", base58.FastBase58Encoding([]byte(family)), _location + ".png")
+	//reg, err := regexp.Compile("[^a-zA-Z0-9]+")
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//_location := reg.ReplaceAllString(location, "")
+	//_location := url.QueryEscape(location)
+	imagePath := path.Join(DataFolder, "images", base58.FastBase58Encoding([]byte(family)), location + ".png")
 	logger.Log.Debugf("loading %s", imagePath)
 	img, err = ioutil.ReadFile(imagePath)
 	return
@@ -44,9 +42,9 @@ func GenerateImages(family string) {
 		logger.Log.Error(err)
 		return
 	}
-	body := bytes.NewReader(payloadBytes)
 
-	req, err := http.NewRequest("POST", "http://localhost:"+AIPort+"/plot", body)
+	body := bytes.NewReader(payloadBytes)
+	req, err := http.NewRequest("POST", "http://localhost:" + AIPort + "/plot", body)
 	if err != nil {
 		logger.Log.Error(err)
 		return
