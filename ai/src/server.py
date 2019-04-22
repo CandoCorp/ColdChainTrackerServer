@@ -4,8 +4,8 @@ import base58
 import logging
 
 from expiringdict import ExpiringDict
-from src.plot_locations import plot_data
-from src.learn import AI
+from plot_locations import plot_data
+from learn import AI
 from flask import Flask, request, jsonify
 
 
