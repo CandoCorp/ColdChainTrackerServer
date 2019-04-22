@@ -3,20 +3,23 @@ import operator
 import hashlib
 import sys
 import random
+import urllib.parse
 
+import matplotlib
+matplotlib.use('Agg')
 import requests
 import randomcolor
 import numpy
-import matplotlib
-matplotlib.use('Agg')
 from matplotlib import pyplot
 from scipy.stats import gaussian_kde
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
+
 def getcolor(s):
     random.seed(int(hashlib.sha256(s.encode('utf-8')).hexdigest(), 16) % 10**8)
     return randomcolor.RandomColor().generate()[0]
+
 
 def plot_data(url,path_to_data):
     r = requests.get(url)
@@ -32,7 +35,7 @@ def plot_data(url,path_to_data):
             locationSensors[loc] = {}
         for s in d['s']:
             for mac in d['s'][s]:
-                sensorName = s+'-'+mac
+                sensorName = s + '-' + mac
                 if sensorName not in locationSensors[loc]:
                     locationSensors[loc][sensorName] = []
                 locationSensors[loc][sensorName].append(d['s'][s][mac])
@@ -68,36 +71,60 @@ def plot_data(url,path_to_data):
     # collect sensor ids that are most meaningful
     sensorIDs = []
     for i, data in enumerate(
-            sorted(varianceOfSensorID.items(), key=operator.itemgetter(1),reverse=True)):
+            sorted(varianceOfSensorID.items(), key=operator.itemgetter(1), reverse=True)):
         if data[1] == 0:
             continue
         sensorIDs.append(data[0])
         if len(sensorIDs) == 10:
             break
 
-
     bins = numpy.linspace(-100, 0, 100)
     for location in locationSensors:
+        z = 0
         pyplot.figure(figsize=(10,4))
 
-        for sensorID in sensorIDs:
-            if sensorID not in locationSensors[location]:
+        for sensorID in locationSensors[location]:
+            if len(locationSensors[location][sensorID]) <= 3:
                 continue
             try:
                 density = gaussian_kde(locationSensors[location][sensorID])
             except Exception as e:
+                print(e)
                 continue
-            density.covariance_factor = lambda : .5
+            density.covariance_factor = lambda: .5
             density._compute_covariance()
-            pyplot.fill(bins,density(bins),alpha=0.2,label=sensorID,facecolor=getcolor(sensorID))
-            # pyplot.hist(
-            #     locationSensors[location][sensorID],
-            #     bins,
-            #     alpha=0.5,
-            #     label=sensorID)
-            if i == 10:
-                break
+
+            if z > 8:
+                pyplot.fill(bins, density(bins), alpha=0.2)
+            else:
+                pyplot.fill(bins, density(bins), alpha=0.2, label=sensorID, facecolor=getcolor(sensorID))
+                z += 1
+
+        # for sensorID in sensorIDs:
+        #     if sensorID not in locationSensors[location]:
+        #         continue
+        #     if len(locationSensors[location][sensorID]) <= 3:
+        #         continue
+        #     try:
+        #         density = gaussian_kde(locationSensors[location][sensorID])
+        #     except Exception as e:
+        #         print(e)
+        #         continue
+        #     density.covariance_factor = lambda : .5
+        #     density._compute_covariance()
+        #     pyplot.fill(bins, density(bins), alpha=0.2, label=sensorID, facecolor=getcolor(sensorID))
+        #     # pyplot.hist(
+        #     #     locationSensors[location][sensorID],
+        #     #     bins,
+        #     #     alpha=0.5,
+        #     #     label=sensorID)
+        #     if i == 10:
+        #         break
+
         pyplot.title(location)
         pyplot.legend(loc='upper right')
-        pyplot.savefig(os.path.join(path_to_data,location + ".png"))
+        # location = ''.join(e for e in location if e.isalnum())
+        location = location.replace("/", "_")
+        location = urllib.parse.quote_plus(location)
+        pyplot.savefig(os.path.join(path_to_data, location + ".png"))
         pyplot.close()

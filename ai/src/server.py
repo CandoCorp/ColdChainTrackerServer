@@ -4,6 +4,9 @@ import base58
 import logging
 
 from expiringdict import ExpiringDict
+from src.plot_locations import plot_data
+from src.learn import AI
+from flask import Flask, request, jsonify
 
 
 # create logger with 'spam_application'
@@ -21,12 +24,8 @@ logger.addHandler(fh)
 logger.addHandler(ch)
 
 
-from flask import Flask, request, jsonify
 app = Flask(__name__)
 
-
-from learn import AI
-from plot_locations import plot_data
 ai_cache = ExpiringDict(max_len=100000, max_age_seconds=60)
 
 

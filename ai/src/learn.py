@@ -30,6 +30,8 @@ logger.addHandler(ch)
 
 import numpy
 from sklearn.feature_extraction import DictVectorizer
+import numpy as np
+import matplotlib.pyplot as plt
 from sklearn.pipeline import make_pipeline
 from sklearn.neural_network import MLPClassifier
 from sklearn.neighbors import KNeighborsClassifier
@@ -42,8 +44,11 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 from sklearn import cluster, mixture
 from sklearn.neighbors import kneighbors_graph
-from naive_bayes import ExtendedNaiveBayes
-from naive_bayes2 import ExtendedNaiveBayes2
+from itertools import cycle, islice
+from xgboost import XGBClassifier
+from sklearn.preprocessing import StandardScaler
+from src.naive_bayes import ExtendedNaiveBayes
+from src.naive_bayes2 import ExtendedNaiveBayes2
 
 
 def timeout(timeout):
@@ -225,8 +230,12 @@ class AI(object):
             y[i] = rows[i][0]
             x[i, :] = numpy.array(rows[i][1:])
 
+        self.x = x
+        self.y = y
+
         names = [
-            "Nearest Neighbors",
+            "K-Nearest Neighbors",
+            "Weighted K-Nearest Neighbors",
             "Linear SVM",
             "RBF SVM",
             # "Gaussian Process",
@@ -235,9 +244,13 @@ class AI(object):
             "Neural Net",
             "AdaBoost",
             "Naive Bayes",
-            "QDA"]
+            "QDA",
+            "XGBoost"
+        ]
         classifiers = [
-            KNeighborsClassifier(3),
+            # KNeighborsClassifier(3),
+            KNeighborsClassifier(n_neighbors=7),
+            KNeighborsClassifier(n_neighbors=7, weights="distance", algorithm="auto"),
             SVC(kernel="linear", C=0.025, probability=True),
             SVC(gamma=2, C=1, probability=True),
             # GaussianProcessClassifier(1.0 * RBF(1.0), warm_start=True),
@@ -247,7 +260,10 @@ class AI(object):
             MLPClassifier(alpha=1),
             AdaBoostClassifier(),
             GaussianNB(),
-            QuadraticDiscriminantAnalysis()]
+            QuadraticDiscriminantAnalysis(),
+            XGBClassifier()
+        ]
+
         self.algorithms = {}
         # split_for_learning = int(0.70 * len(y))
         for name, clf in zip(names, classifiers):
@@ -305,71 +321,108 @@ class AI(object):
 
 
 def do():
-    ai = AI()
-    ai.load()
-    # ai.learn()
+    ai = AI("dGVzdGRi", "../testing/")
+    ai.load("dGVzdGRi.find3.ai")
+    # ai.load()
+    ai.learn("../testing/testdb.csv")
+
+    plot_num = 1
+    # ============
+    # Set up cluster parameters
+    # ============
+    plt.figure(figsize=(9 * 2 + 3, 12.5))
+    plt.subplots_adjust(left=.02, right=.98, bottom=.001, top=.96, wspace=.05,
+                        hspace=.01)
+
+    X = StandardScaler().fit_transform(ai.x)
     params = {'quantile': .3,
               'eps': .3,
               'damping': .9,
               'preference': -200,
               'n_neighbors': 10,
               'n_clusters': 3}
-    bandwidth = cluster.estimate_bandwidth(ai.x, quantile=params['quantile'])
-    connectivity = kneighbors_graph(
-        ai.x, n_neighbors=params['n_neighbors'], include_self=False)
-    # make connectivity symmetric
-    connectivity = 0.5 * (connectivity + connectivity.T)
-    ms = cluster.MeanShift(bandwidth=bandwidth, bin_seeding=True)
-    two_means = cluster.MiniBatchKMeans(n_clusters=params['n_clusters'])
-    ward = cluster.AgglomerativeClustering(
-        n_clusters=params['n_clusters'], linkage='ward',
-        connectivity=connectivity)
-    spectral = cluster.SpectralClustering(
-        n_clusters=params['n_clusters'], eigen_solver='arpack',
-        affinity="nearest_neighbors")
-    dbscan = cluster.DBSCAN(eps=params['eps'])
-    affinity_propagation = cluster.AffinityPropagation(
-        damping=params['damping'], preference=params['preference'])
-    average_linkage = cluster.AgglomerativeClustering(
-        linkage="average", affinity="cityblock",
-        n_clusters=params['n_clusters'], connectivity=connectivity)
-    birch = cluster.Birch(n_clusters=params['n_clusters'])
-    gmm = mixture.GaussianMixture(
-        n_components=params['n_clusters'], covariance_type='full')
-    clustering_algorithms = (
-        ('MiniBatchKMeans', two_means),
-        ('AffinityPropagation', affinity_propagation),
-        ('MeanShift', ms),
-        ('SpectralClustering', spectral),
-        ('Ward', ward),
-        ('AgglomerativeClustering', average_linkage),
-        ('DBSCAN', dbscan),
-        ('Birch', birch),
-        ('GaussianMixture', gmm)
-    )
+    datasets = range(0, 6)
+    for i_dataset in datasets:
+        bandwidth = cluster.estimate_bandwidth(ai.x, quantile=params['quantile'])
+        connectivity = kneighbors_graph(
+            ai.x, n_neighbors=params['n_neighbors'], include_self=False)
+        # make connectivity symmetric
+        connectivity = 0.5 * (connectivity + connectivity.T)
+        ms = cluster.MeanShift(bandwidth=bandwidth, bin_seeding=True)
+        two_means = cluster.MiniBatchKMeans(n_clusters=params['n_clusters'])
+        ward = cluster.AgglomerativeClustering(
+            n_clusters=params['n_clusters'], linkage='ward',
+            connectivity=connectivity)
+        spectral = cluster.SpectralClustering(
+            n_clusters=params['n_clusters'], eigen_solver='arpack',
+            affinity="nearest_neighbors")
+        dbscan = cluster.DBSCAN(eps=params['eps'])
+        affinity_propagation = cluster.AffinityPropagation(
+            damping=params['damping'], preference=params['preference'])
+        average_linkage = cluster.AgglomerativeClustering(
+            linkage="average", affinity="cityblock",
+            n_clusters=params['n_clusters'], connectivity=connectivity)
+        birch = cluster.Birch(n_clusters=params['n_clusters'])
+        gmm = mixture.GaussianMixture(
+            n_components=params['n_clusters'], covariance_type='full')
+        clustering_algorithms = (
+            ('MiniBatchKMeans', two_means),
+            ('AffinityPropagation', affinity_propagation),
+            ('MeanShift', ms),
+            ('SpectralClustering', spectral),
+            ('Ward', ward),
+            ('AgglomerativeClustering', average_linkage),
+            ('DBSCAN', dbscan),
+            ('Birch', birch),
+            ('GaussianMixture', gmm)
+        )
 
-    for name, algorithm in clustering_algorithms:
-        with warnings.catch_warnings():
-            warnings.filterwarnings(
-                "ignore",
-                message="the number of connected components of the " +
-                "connectivity matrix is [0-9]{1,2}" +
-                " > 1. Completing it to avoid stopping the tree early.",
-                category=UserWarning)
-            warnings.filterwarnings(
-                "ignore",
-                message="Graph is not fully connected, spectral embedding" +
-                " may not work as expected.",
-                category=UserWarning)
-            try:
-                algorithm.fit(ai.x)
-            except:
-                continue
+        for name, algorithm in clustering_algorithms:
+            t0 = time.time()
+            with warnings.catch_warnings():
+                warnings.filterwarnings(
+                    "ignore",
+                    message="the number of connected components of the " +
+                    "connectivity matrix is [0-9]{1,2}" +
+                    " > 1. Completing it to avoid stopping the tree early.",
+                    category=UserWarning)
+                warnings.filterwarnings(
+                    "ignore",
+                    message="Graph is not fully connected, spectral embedding" +
+                    " may not work as expected.",
+                    category=UserWarning)
+                try:
+                    algorithm.fit(ai.x)
+                except:
+                    continue
 
-        if hasattr(algorithm, 'labels_'):
-            y_pred = algorithm.labels_.astype(numpy.int)
-        else:
-            y_pred = algorithm.predict(ai.x)
+            t1 = time.time()
+            if hasattr(algorithm, 'labels_'):
+                y_pred = algorithm.labels_.astype(numpy.int)
+            else:
+                y_pred = algorithm.predict(ai.x)
+
+            plt.subplot(len(datasets), len(clustering_algorithms), plot_num)
+
+            plt.title(name, size=18)
+
+            colors = np.array(list(islice(cycle(['#377eb8', '#ff7f00', '#4daf4a',
+                                                 '#f781bf', '#a65628', '#984ea3',
+                                                 '#999999', '#e41a1c', '#dede00']),
+                                          int(max(y_pred) + 1))))
+            # add black color for outliers (if any)
+            colors = np.append(colors, ["#000000"])
+            plt.scatter(X[:, 0], X[:, 1], s=10, color=colors[y_pred])
+
+            plt.xlim(-2.5, 2.5)
+            plt.ylim(-2.5, 2.5)
+            plt.xticks(())
+            plt.yticks(())
+            plt.text(.99, .01, ('%.2fs' % (t1 - t0)).lstrip('0'),
+                     transform=plt.gca().transAxes, size=15,
+                     horizontalalignment='right')
+            plot_num += 1
+
         if max(y_pred) > 3:
             continue
         known_groups = {}
@@ -389,10 +442,14 @@ def do():
                     k, g, len(set(known_groups[k]).intersection(guessed_groups[g])))
 
 
-# ai = AI()
+if __name__ == '__main__':
+    do()
+    plt.show()
+#
+# ai = AI("dGVzdGRi", "../testing/")
 # ai.learn("../testing/testdb.csv")
 # ai.save("dGVzdGRi.find3.ai")
 # ai.load("dGVzdGRi.find3.ai")
 # a = json.load(open('../testing/testdb_single_rec.json'))
-# classified = ai.classify(a)
+# classified = ai.classify(a['sensor_data'])
 # print(json.dumps(classified,indent=2))
