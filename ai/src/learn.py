@@ -47,8 +47,8 @@ from sklearn.neighbors import kneighbors_graph
 from itertools import cycle, islice
 from xgboost import XGBClassifier
 from sklearn.preprocessing import StandardScaler
-from src.naive_bayes import ExtendedNaiveBayes
-from src.naive_bayes2 import ExtendedNaiveBayes2
+from naive_bayes import ExtendedNaiveBayes
+from naive_bayes2 import ExtendedNaiveBayes2
 
 
 def timeout(timeout):

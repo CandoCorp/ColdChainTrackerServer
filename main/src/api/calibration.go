@@ -143,7 +143,7 @@ func learnFromData(family string, datas []models.SensorData) (err error) {
 	if err != nil {
 		return
 	}
-	defer os.Remove(path.Join(p.DataFolder, p.CSVFile))
+	//defer os.Remove(path.Join(p.DataFolder, p.CSVFile))
 
 	url := "http://localhost:" + AIPort + "/learn"
 	bPayload, err := json.Marshal(p)
