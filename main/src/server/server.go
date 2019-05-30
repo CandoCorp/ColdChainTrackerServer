@@ -664,7 +664,12 @@ func Run() (err error) {
 		family := strings.ToLower(c.Param("family"))
 		db, err := database.Open(family, true)
 		if err == nil {
-			err = db.DeleteLocation(c.Param("location"))
+			location := c.Param("location")
+			location, err_ := url.QueryUnescape(location)
+			if err_ != nil{
+				c.JSON(200, gin.H{"success": false, "message": err_.Error()})
+			}
+			err = db.DeleteLocation(location)
 			db.Close()
 			if err == nil {
 				c.JSON(200, gin.H{"success": true, "message": "deleted location '" + c.Param("location") + "' for " + family})
