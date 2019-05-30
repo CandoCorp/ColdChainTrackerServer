@@ -6,7 +6,7 @@ serve: clean
 	cd src && \
 	flask run --debugger --port 8002
 
-production: clean
+production:
 	export LC_ALL=C.UTF-8 && \
 	export LANG=C.UTF-8 && \
 	export FLASK_APP=server.py && \
