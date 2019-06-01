@@ -660,11 +660,11 @@ func Run() (err error) {
 		}
 
 	})
-	r.DELETE("/api/v1/location/:family/:location", func(c *gin.Context) {
+	r.DELETE("/api/v1/location/:family/", func(c *gin.Context) {
 		family := strings.ToLower(c.Param("family"))
 		db, err := database.Open(family, true)
 		if err == nil {
-			location := c.Param("location")
+			location := c.Query("location")
 			logger.Log.Debugf("[%s] getting location %s for deletion", family, location)
 			location, err_ := url.QueryUnescape(location)
 			if err_ != nil{
