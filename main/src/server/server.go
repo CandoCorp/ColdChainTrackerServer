@@ -665,13 +665,13 @@ func Run() (err error) {
 		db, err := database.Open(family, true)
 		if err == nil {
 			location := c.Query("location")
-			logger.Log.Debugf("[%s] getting location %s for deletion", family, location)
 			location, err_ := url.QueryUnescape(location)
+			logger.Log.Debugf("[%s] getting location %s for deletion", family, location)
 			if err_ != nil{
 				logger.Log.Debugf("location after unescape %s", location)
 				c.JSON(200, gin.H{"success": false, "message": err_.Error()})
 			}
-			err = db.DeleteLocation(c.Param("location"))
+			err = db.DeleteLocation(location)
 			db.Close()
 			if err == nil {
 				c.JSON(200, gin.H{"success": true, "message": "deleted location '" + c.Param("location") + "' for " + family})
